@@ -91,7 +91,7 @@ df_raw = load_data(CSV_PATH)
 # SIDEBAR — FILTROS
 # ──────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## 🎓 ETalent")
+    st.markdown("## ETalent")
     st.markdown("**Evaluación de Transparencia Institucional**")
     st.markdown("---")
     st.markdown("### Filtros")
@@ -103,6 +103,17 @@ with st.sidebar:
     sel_eis  = st.multiselect("Universidad (EIS)", eis_opts,  default=eis_opts)
     sel_hoja = st.multiselect("Dimensión principal", hoja_opts, default=hoja_opts)
     sel_dim  = st.multiselect("Sub-dimensión", dim_opts, default=dim_opts)
+
+    # Guardia: si el usuario desmarca todo, restaurar selección completa
+    if not sel_eis:
+        st.warning("Selecciona al menos una universidad.")
+        sel_eis = eis_opts
+    if not sel_hoja:
+        st.warning("Selecciona al menos una dimensión.")
+        sel_hoja = hoja_opts
+    if not sel_dim:
+        st.warning("Selecciona al menos una sub-dimensión.")
+        sel_dim = dim_opts
 
     st.markdown("---")
     st.markdown("**Proyecto:** ETalent — ESPOCH")
@@ -118,6 +129,11 @@ df = df_raw[
     df_raw["HOJA"].isin(sel_hoja) &
     df_raw["DIMENSION"].isin(sel_dim)
 ].copy()
+
+# Guardia global: si los filtros devuelven vacío, detener renderizado
+if df.empty:
+    st.error("La combinación de filtros seleccionada no tiene datos. Ajusta los filtros.")
+    st.stop()
 
 # ──────────────────────────────────────────────────────────────
 # HEADER
@@ -393,15 +409,19 @@ fc2, fc3 = st.columns([3, 1])
 with fc2:
     st.markdown('<p style="color:#1F2937;font-weight:600;font-size:13px;margin-bottom:4px;">Ordenar por</p>',
                 unsafe_allow_html=True)
-    orden = st.selectbox("_orden",
-                         ["Promedio (peor primero)", "Universidad", "Sub-Dimensión", "Criterios fallidos"],
-                         index=0, label_visibility="collapsed")
+    ORDEN_OPTS = ["Promedio", "Universidad", "Sub-Dimensión", "Criterios fallidos"]
+    orden = st.selectbox("_orden", ORDEN_OPTS, index=0, label_visibility="collapsed")
 
 with fc3:
     st.markdown('<p style="color:#1F2937;font-weight:600;font-size:13px;margin-bottom:4px;">Mostrar top N</p>',
                 unsafe_allow_html=True)
     top_n = st.number_input("_topn", min_value=5, max_value=200, value=30, step=5,
                             label_visibility="collapsed")
+
+# Defensa: clamp top_n por si acaso, y validar orden contra lista permitida
+top_n = int(max(5, min(200, top_n)))
+if orden not in ORDEN_OPTS:
+    orden = "Promedio"
 
 # Aplicar orden
 if orden == "Universidad":
@@ -410,6 +430,7 @@ elif orden == "Sub-Dimensión":
     criticos_raw = criticos_raw.sort_values(["DIMENSION", "PROMEDIO"])
 elif orden == "Criterios fallidos":
     criticos_raw = criticos_raw.sort_values("N_FALLIDOS", ascending=False)
+# "Promedio" ya viene ordenado por default (sort_values PROMEDIO, EIS)
 
 criticos_raw = criticos_raw.head(top_n)
 
