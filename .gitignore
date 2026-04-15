@@ -1,3 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+
+# Ignore excel temp files and raw data
+.~lock.*
+*.xlsx
