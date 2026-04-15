@@ -11,7 +11,7 @@ st.set_page_config(
     page_title="Dashboard ETalent · ESPOCH",
     page_icon="🎓",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -32,35 +32,41 @@ html, body, [data-testid="stAppViewContainer"] {
 [data-testid="stSidebarCollapseButton"] { visibility: hidden !important; }
 div.block-container { padding: 0.55rem 1.6rem 0.4rem 1.6rem; }
 
-/* ── Sidebar ── */
-[data-testid="stSidebar"] {
-    background: linear-gradient(170deg, #0D1B2A 0%, #0F2744 55%, #1A3F6F 100%) !important;
-    border-right: 1px solid rgba(255,255,255,0.06);
+/* ── Sidebar oculto — los filtros viven en el panel inline ── */
+[data-testid="stSidebar"],
+[data-testid="stSidebarCollapseButton"] { display: none !important; }
+
+/* ── Panel de filtros inline ── */
+.filter-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 20px 10px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.06), 0 4px 16px rgba(15,23,42,0.04);
+    margin-bottom: 10px;
+    border-top: 3px solid #1D4ED8;
 }
-[data-testid="stSidebar"] * { color: #CBD5E1 !important; }
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3 { color: #F8FAFC !important; font-weight: 700 !important; }
-[data-testid="stSidebar"] hr {
-    border: none !important;
-    border-top: 1px solid rgba(255,255,255,0.1) !important;
-    margin: 10px 0 !important;
-}
-[data-testid="stSidebar"] .stMultiSelect [data-baseweb="tag"] {
-    background-color: #1D4ED8 !important;
-    border-radius: 6px !important;
-}
-[data-testid="stSidebar"] [data-baseweb="select"] > div {
-    background-color: rgba(255,255,255,0.07) !important;
-    border-color: rgba(255,255,255,0.15) !important;
-    border-radius: 8px !important;
-}
-[data-testid="stSidebar"] label {
-    font-size: 11px !important;
-    font-weight: 600 !important;
+.filter-panel label {
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.7px !important;
-    color: #94A3B8 !important;
+    letter-spacing: 0.8px !important;
+    color: #64748B !important;
+}
+
+/* ── Botón Filtros en el header ── */
+div[data-testid="column"]:last-child button[kind="secondary"] {
+    background: rgba(255,255,255,0.15) !important;
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.8px !important;
+    border-radius: 8px !important;
+    transition: background .2s !important;
+    height: 58px !important;
+}
+div[data-testid="column"]:last-child button[kind="secondary"]:hover {
+    background: rgba(255,255,255,0.25) !important;
 }
 
 /* ── KPI cards ── */
@@ -144,75 +150,85 @@ def load_data(path: str) -> pd.DataFrame:
 df_raw = load_data(CSV_PATH)
 
 # ──────────────────────────────────────────────────────────────────────────────
-# SIDEBAR — FILTROS
+# FILTROS — panel inline, activado por el botón "Filtros" del header
 # Estructura lista para todas las dimensiones; por ahora solo Transparencia
 # ──────────────────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("## 🎓 ETalent")
-    st.markdown("**Evaluación de Transparencia Institucional**")
-    st.markdown("---")
+if "show_filters" not in st.session_state:
+    st.session_state.show_filters = False
 
-    st.markdown("### Filtros")
+dim_macro_opts = sorted(df_raw["DIMENSION_MACRO"].unique())
+uni_opts       = sorted(df_raw["IES ANONIMIZADA"].unique())
+subdim_opts    = sorted(df_raw["SUBDIMENSIÓN"].unique())
 
-    dim_macro_opts = sorted(df_raw["DIMENSION_MACRO"].unique())
-    uni_opts       = sorted(df_raw["IES ANONIMIZADA"].unique())
-    subdim_opts    = sorted(df_raw["SUBDIMENSIÓN"].unique())
-
-    sel_macro = st.multiselect(
-        "Dimensión",
-        dim_macro_opts,
-        default=dim_macro_opts,
-        help="Dimensiones de evaluación disponibles.",
-    )
-    sel_uni = st.multiselect(
-        "Universidad",
-        uni_opts,
-        default=uni_opts,
-        help="Universidades anonimizadas.",
-    )
-    sel_subdim = st.multiselect(
-        "Sub-Dimensión",
-        subdim_opts,
-        default=subdim_opts,
-        help="Sub-dimensiones de la hoja activa.",
-    )
-
-    st.markdown("---")
-
-    # Contadores de estado del filtro
-    n_dim   = len(sel_macro)
-    n_uni   = len(sel_uni)
-    n_sub   = len(sel_subdim)
-    total_d = len(dim_macro_opts)
-    total_u = len(uni_opts)
-    total_s = len(subdim_opts)
-
-    estado = "GENERAL" if (n_dim == total_d and n_uni == total_u and n_sub == total_s) else "PERSONALIZADO"
-    color_estado = "#10B981" if estado == "GENERAL" else "#F59E0B"
-
-    st.markdown(
-        f'<div style="font-size:10px;font-weight:700;letter-spacing:1px;'
-        f'color:{color_estado};margin-bottom:8px;">{estado}</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        f'<div style="font-size:11px;color:#64748B;line-height:1.7;">'
-        f'Dimensiones: <b style="color:#CBD5E1">{n_dim}/{total_d}</b><br>'
-        f'Universidades: <b style="color:#CBD5E1">{n_uni}/{total_u}</b><br>'
-        f'Sub-Dimensiones: <b style="color:#CBD5E1">{n_sub}/{total_s}</b>'
-        f'</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown("---")
-    st.markdown(
-        '<div style="font-size:10px;color:#475569;line-height:1.6;">'
-        'ETalent · ESPOCH · 2026<br>Jefferson Jordan</div>',
-        unsafe_allow_html=True,
-    )
+# Valores por defecto: todo seleccionado
+sel_macro  = dim_macro_opts
+sel_uni    = uni_opts
+sel_subdim = subdim_opts
 
 # ──────────────────────────────────────────────────────────────────────────────
-# APLICAR FILTROS
+# HEADER  +  BOTÓN FILTROS
 # ──────────────────────────────────────────────────────────────────────────────
+h_col, btn_col = st.columns([9, 1], gap="small")
+
+with h_col:
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #0D1B2A 0%, #1D4ED8 55%, #0EA5E9 100%);
+        border-radius: 14px; padding: 16px 28px; margin-bottom: 0; color: white;">
+      <div style="font-size:20px; font-weight:800; letter-spacing:-0.4px; font-family:Inter,sans-serif;">
+        Dashboard ETalent · Evaluacion EIS
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with btn_col:
+    # Pequeño espaciado para alinear verticalmente con el header
+    st.markdown('<div style="height:8px"></div>', unsafe_allow_html=True)
+    filtros_label = "✕ Cerrar" if st.session_state.show_filters else "⚙ Filtros"
+    if st.button(filtros_label, use_container_width=True, key="btn_filtros"):
+        st.session_state.show_filters = not st.session_state.show_filters
+        st.rerun()
+
+st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+
+# ── Panel de filtros (visible al pulsar el botón) ─────────────────────────────
+if st.session_state.show_filters:
+    with st.container():
+        st.markdown('<div class="filter-panel">', unsafe_allow_html=True)
+        f1, f2, f3 = st.columns(3, gap="large")
+        with f1:
+            sel_macro = st.multiselect(
+                "Dimensión",
+                dim_macro_opts, default=dim_macro_opts,
+                help="Dimensiones de evaluación disponibles.",
+            )
+        with f2:
+            sel_uni = st.multiselect(
+                "Universidad",
+                uni_opts, default=uni_opts,
+                help="Universidades anonimizadas.",
+            )
+        with f3:
+            sel_subdim = st.multiselect(
+                "Sub-Dimensión",
+                subdim_opts, default=subdim_opts,
+                help="Sub-dimensiones de la hoja activa.",
+            )
+
+        # Estado del filtro
+        n_dim, n_uni, n_sub = len(sel_macro), len(sel_uni), len(sel_subdim)
+        total_d, total_u, total_s = len(dim_macro_opts), len(uni_opts), len(subdim_opts)
+        activo = not (n_dim == total_d and n_uni == total_u and n_sub == total_s)
+        badge_color = "#F59E0B" if activo else "#10B981"
+        badge_txt   = f"Filtro activo · {n_uni}/{total_u} uni · {n_sub}/{total_s} sub-dim" if activo else f"Sin filtros · {total_u} universidades · {total_s} sub-dimensiones"
+        st.markdown(
+            f'<div style="font-size:10px;font-weight:600;color:{badge_color};'
+            f'margin-top:4px;letter-spacing:0.5px;">{badge_txt}</div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown('</div>', unsafe_allow_html=True)
+
+# Re-aplicar filtros (usa los valores del panel si está abierto, o los defaults si está cerrado)
 df = df_raw[
     df_raw["DIMENSION_MACRO"].isin(sel_macro) &
     df_raw["IES ANONIMIZADA"].isin(sel_uni) &
@@ -220,37 +236,8 @@ df = df_raw[
 ].copy()
 
 if df.empty:
-    st.warning("⚠️ No hay datos con los filtros seleccionados. Ajusta los filtros en la barra lateral.")
+    st.warning("⚠️ No hay datos con los filtros seleccionados.")
     st.stop()
-
-# ──────────────────────────────────────────────────────────────────────────────
-# HEADER
-# ──────────────────────────────────────────────────────────────────────────────
-n_unis = df["IES ANONIMIZADA"].nunique()
-n_dims = df["DIMENSION_MACRO"].nunique()
-n_ind  = df["INDICADOR"].nunique()
-
-st.markdown(f"""
-<div style="
-    background: linear-gradient(135deg, #0D1B2A 0%, #1D4ED8 55%, #0EA5E9 100%);
-    border-radius: 14px; padding: 16px 28px; margin-bottom: 12px; color: white;
-    display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <div style="font-size:20px; font-weight:800; letter-spacing:-0.4px; font-family:Inter,sans-serif;">
-      Dashboard ETalent · Transparencia Institucional
-    </div>
-    <div style="margin-top:4px; opacity:0.72; font-size:12px; font-weight:500;">
-      {n_unis} Universidades · {n_dims} Dimensión(es) · {n_ind} Indicadores
-    </div>
-  </div>
-  <div style="
-    background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25);
-    border-radius:8px; padding:6px 14px; font-size:11px; font-weight:700;
-    letter-spacing:1.2px; color:white;">
-    ESPOCH
-  </div>
-</div>
-""", unsafe_allow_html=True)
 
 # ──────────────────────────────────────────────────────────────────────────────
 # PRECÁLCULOS
