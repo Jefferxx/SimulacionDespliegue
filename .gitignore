@@ -2,6 +2,10 @@ venv/
 __pycache__/
 *.pyc
 
-# Ignore excel temp files and raw data
+# Excel y archivos temporales
 .~lock.*
 *.xlsx
+
+# Logs de Streamlit
+streamlit.log
+*.log
