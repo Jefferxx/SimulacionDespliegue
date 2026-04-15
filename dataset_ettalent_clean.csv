@@ -1,144 +1,4 @@
 ﻿EIS,HOJA,DIMENSION,VARIABLE,INDICADOR,PUNTAJE_1,PUNTAJE_2,PROMEDIO
-Universidad 6,Transparencia,Transparencia Activa,Accesibilidad Del Portalde Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 6,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,1.0,0.75,0.875
-Universidad 6,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 6,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",1.0,1.0,1.0
-Universidad 6,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,1.0,1.0
-Universidad 6,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.0,0.375,0.1875
-Universidad 6,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",1.0,1.0,1.0
-Universidad 6,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.0,0.0,0.0
-Universidad 6,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,0.0,0.125,0.0625
-Universidad 6,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.75,0.5,0.625
-Universidad 6,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",0.6666666666666666,0.5,0.5833333333333334
-Universidad 6,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 6,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.4,0.3,0.35
-Universidad 6,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",1.0,0.875,0.9375
-Universidad 6,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",0.8333333333333334,0.5,0.6666666666666666
-Universidad 6,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.75,0.625,0.6875
-Universidad 6,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.6666666666666666,0.16666666666666666,0.4166666666666667
-Universidad 6,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,1.0,0.6666666666666666,0.8333333333333334
-Universidad 6,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,1.0,0.5,0.75
-Universidad 6,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.75,0.875
-Universidad 7,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 7,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,1.0,0.75,0.875
-Universidad 7,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 7,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",1.0,1.0,1.0
-Universidad 7,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,1.0,1.0
-Universidad 7,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.0,0.125,0.0625
-Universidad 7,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",0.25,0.375,0.3125
-Universidad 7,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.0,0.125,0.0625
-Universidad 7,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,0.25,0.125,0.1875
-Universidad 7,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.0,0.375,0.1875
-Universidad 7,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",0.8333333333333334,0.3333333333333333,0.5833333333333334
-Universidad 7,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,0.3333333333333333,0.5
-Universidad 7,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.6,0.3,0.45
-Universidad 7,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",1.0,0.5,0.75
-Universidad 7,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",1.0,0.5,0.75
-Universidad 7,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",1.0,0.25,0.625
-Universidad 7,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.6666666666666666,0.16666666666666666,0.4166666666666667
-Universidad 7,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,1.0,0.5,0.75
-Universidad 7,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,1.0,0.5,0.75
-Universidad 7,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.25,0.625
-Universidad 8,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 8,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,1.0,1.0,1.0
-Universidad 8,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 8,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",1.0,0.75,0.875
-Universidad 8,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,1.0,1.0
-Universidad 8,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.5,0.375,0.4375
-Universidad 8,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",0.875,0.75,0.8125
-Universidad 8,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.375,0.0,0.1875
-Universidad 8,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,0.75,0.125,0.4375
-Universidad 8,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.75,0.375,0.5625
-Universidad 8,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",0.5,0.5,0.5
-Universidad 8,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,0.3333333333333333,0.5
-Universidad 8,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.6,0.3,0.45
-Universidad 8,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",0.625,0.5,0.5625
-Universidad 8,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",1.0,0.5,0.75
-Universidad 8,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.75,0.25,0.5
-Universidad 8,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,1.0,0.16666666666666666,0.5833333333333334
-Universidad 8,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,1.0,0.5,0.75
-Universidad 8,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,1.0,0.5,0.75
-Universidad 8,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.5,0.75
-Universidad 9,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 9,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,1.0,0.25,0.625
-Universidad 9,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 9,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",0.75,1.0,0.875
-Universidad 9,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,0.75,0.875
-Universidad 9,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.75,0.5,0.625
-Universidad 9,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",0.875,0.75,0.8125
-Universidad 9,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.5,0.125,0.3125
-Universidad 9,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,1.0,0.125,0.5625
-Universidad 9,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.75,0.375,0.5625
-Universidad 9,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",1.0,0.5,0.75
-Universidad 9,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,0.3333333333333333,0.5
-Universidad 9,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.4,0.3,0.35
-Universidad 9,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",0.25,0.5,0.375
-Universidad 9,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",1.0,0.5,0.75
-Universidad 9,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.875,0.375,0.625
-Universidad 9,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.16666666666666666,0.0,0.08333333333333333
-Universidad 9,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,0.5,0.5,0.5
-Universidad 9,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,0.625,0.5,0.5625
-Universidad 9,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.5,0.75
-Universidad 10,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,0.75,0.875
-Universidad 10,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,0.75,1.0,0.875
-Universidad 10,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,0.75,0.875
-Universidad 10,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",1.0,0.75,0.875
-Universidad 10,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,0.75,0.875
-Universidad 10,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.75,0.75,0.75
-Universidad 10,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",1.0,0.875,0.9375
-Universidad 10,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.5,0.375,0.4375
-Universidad 10,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,1.0,0.875,0.9375
-Universidad 10,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.75,1.0,0.875
-Universidad 10,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",0.6666666666666666,1.0,0.8333333333333334
-Universidad 10,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,1.0,0.8333333333333334
-Universidad 10,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.4,0.3,0.35
-Universidad 10,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",1.0,0.875,0.9375
-Universidad 10,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 10,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.25,0.25,0.25
-Universidad 10,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 10,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,1.0,0.8333333333333334,0.9166666666666666
-Universidad 10,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,1.0,1.0,1.0
-Universidad 10,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.75,0.875
-Universidad 11,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 11,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 11,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",0.75,0.75,0.75
-Universidad 11,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,1.0,1.0
-Universidad 11,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",0.75,0.75,0.75
-Universidad 11,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.25,0.25,0.25
-Universidad 11,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",0.5,0.5,0.5
-Universidad 11,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,0.5,0.5833333333333334
-Universidad 11,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.2,0.3,0.25
-Universidad 11,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 11,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.0,0.0,0.0
-Universidad 11,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.16666666666666666,0.16666666666666666,0.16666666666666666
-Universidad 11,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,0.6666666666666666,0.5,0.5833333333333334
-Universidad 11,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,0.625,0.5,0.5625
-Universidad 11,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,1.0,1.0
-Universidad 12,Transparencia,Transparencia Activa,Accesibilidad Del Portal De Transparencia,Existencia del portal,1.0,1.0,1.0
-Universidad 12,Transparencia,Transparencia Activa,Actualización De La Información,Información actualizada en base a normativa,1.0,0.75,0.875
-Universidad 12,Transparencia,Transparencia Activa,Completitud De La Información,Ítems publicados son los exigidos por normativa,1.0,1.0,1.0
-Universidad 12,Transparencia,Transparencia Activa,Publicación De Información Financiera Y Presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",1.0,0.75,0.875
-Universidad 12,Transparencia,Transparencia Activa,Usabilidad Del Portal,Publicación de información en formato de datos abiertos,1.0,1.0,1.0
-Universidad 12,Transparencia,Transparencia Colaborativa,Datos Abiertos Co-Creados,La institución presenta datasets o informes generados junto con actores externos,0.75,0.25,0.5
-Universidad 12,Transparencia,Transparencia Colaborativa,Mecanismos De Colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",1.0,0.625,0.8125
-Universidad 12,Transparencia,Transparencia Colaborativa,Nivel De Interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.625,0.125,0.375
-Universidad 12,Transparencia,Transparencia Colaborativa,Participación Ciudadana En El Diseño De Información,Existencia de proyectos de transparencia co-creados con la comunidad,1.0,0.25,0.625
-Universidad 12,Transparencia,Transparencia Colaborativa,Retroalimentación Pública,Existencia de canales de comentarios o sugerencias,1.0,0.5,0.75
-Universidad 12,Transparencia,Transparencia Focalizada,Accesibilidad Diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",1.0,0.5,0.75
-Universidad 12,Transparencia,Transparencia Focalizada,Claridad Y Lenguaje Ciudadano,Nivel de comprensión de la información publicada,0.6666666666666666,0.3333333333333333,0.5
-Universidad 12,Transparencia,Transparencia Focalizada,Identificación De Públicos Objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",0.3,0.4,0.35
-Universidad 12,Transparencia,Transparencia Focalizada,Información Sectorial Priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",1.0,0.625,0.8125
-Universidad 12,Transparencia,Transparencia Pasiva,Mecanismos De Acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",1.0,0.5,0.75
-Universidad 12,Transparencia,Transparencia Pasiva,Procedimiento Institucional,"Existencia de reglamento, protocolo, formato de solicitudes",1.0,0.75,0.875
-Universidad 12,Transparencia,Transparencia Pasiva,Publicación De Solicitudes Frecuentes (Faǫ),Existencia de repositorio público de solicitudes recurrentes,0.5,0.16666666666666666,0.3333333333333333
-Universidad 12,Transparencia,Transparencia Pasiva,Respuestas Completas,Las respuestas se completan satisfactoriamente por parte de la institución,1.0,0.5,0.75
-Universidad 12,Transparencia,Transparencia Pasiva,Satisfacción Del Solicitante,Los usuarios están satisfechos con el servicio,1.0,0.5,0.75
-Universidad 12,Transparencia,Transparencia Pasiva,Tiempos De Respuesta,Plazos predefinidos para respuesta a solicitudes de información,1.0,0.5,0.75
 Universidad 1,Participacion,Participación Consultiva,Existencia De Mecanismos De Consulta,"Existe variedad de espacios
 consultivos activos",0.16666666666666666,0.16666666666666666,0.16666666666666666
 Universidad 1,Participacion,Participación Consultiva,Frecuencia De Participación Consultiva,"Existencia de procesos de
@@ -289,66 +149,66 @@ Universidad 5,Participacion,Participación Informativa,Acceso A La Información 
 Universidad 5,Participacion,Participación Informativa,Comunicación Bidireccional Potencial,Existencia de canales para recibir comentarios o consultas (aunque no se usen).,1.0,1.0,1.0
 Universidad 5,Participacion,Participación Informativa,Difusión De Decisiones Institucionales,"Se publicación de resoluciones y acuerdos institucionales de manera frecuente (Mensual, Trimestral, Semestral, Anual)",0.875,0.875,0.875
 Universidad 5,Participacion,Participación Informativa,Participación En Eventos Informativos,Participación en eventos informativos,1.0,1.0,1.0
-Universidad 13,Participacion,Participación Consultiva,Existencia De Mecanismos De Consulta,"Existe variedad de espacios
+Universidad 6,Participacion,Participación Consultiva,Existencia De Mecanismos De Consulta,"Existe variedad de espacios
 consultivos activos",0.3333333333333333,0.5,0.4166666666666667
-Universidad 13,Participacion,Participación Consultiva,Frecuencia De Participación Consultiva,"Existencia de procesos de
+Universidad 6,Participacion,Participación Consultiva,Frecuencia De Participación Consultiva,"Existencia de procesos de
 consulta con la comunidad universitaria sobre políticas o planes Aprobados.",0.16666666666666666,0.3333333333333333,0.25
-Universidad 13,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
+Universidad 6,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
 grupos internos y externos en las consultas (% de participación de estudiantes, docentes,
 sociedad).",1.0,1.0,1.0
-Universidad 13,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
+Universidad 6,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
 grupos internos y externos en las consultas (% de participación de estudiantes, docentes, sociedad).",0.25,0.25,0.25
-Universidad 13,Participacion,Participación Consultiva,"Participación Digital
+Universidad 6,Participacion,Participación Consultiva,"Participación Digital
 (Consultiva)","Uso de herramientas
 electrónicas para recoger aportes o encuestas.",0.0,0.0,0.0
-Universidad 13,Participacion,Participación Consultiva,Transparencia De Los Resultados,"Grado de publicación y
+Universidad 6,Participacion,Participación Consultiva,Transparencia De Los Resultados,"Grado de publicación y
 difusión de los aportes recibidos y respuestas institucionales (consultas cuyos resultados se publican / consultas totales).",0.0,0.0,0.0
-Universidad 13,Participacion,Participación Consultiva,"Uso Institucional De Los
+Universidad 6,Participacion,Participación Consultiva,"Uso Institucional De Los
 Aportes","Existe evidencia de que los
 aportes ciudadanos o académicos influyeron en decisiones.",0.0,0.0,0.0
-Universidad 13,Participacion,Participación Consultiva,"Uso Institucional De Los
+Universidad 6,Participacion,Participación Consultiva,"Uso Institucional De Los
 Aportes",Existe evidencia de que los aportes ciudadanos o académicos influyeron en decisiones.,0.0,0.0,0.0
-Universidad 13,Participacion,Participación Decisoria,Co-Creación De Políticas O Proyectos,Existen iniciativas o políticas diseñadas de manera colaborativa (Coneo_Anual / Conteo_Acumulado)*100.,0.5,0.3333333333333333,0.4166666666666667
-Universidad 13,Participacion,Participación Decisoria,Espacios De Co-Decisión,Existencia de órganos colegiados con representación de la comunidad universitaria o externa.,1.0,1.0,1.0
-Universidad 13,Participacion,Participación Decisoria,Evaluación Participativa,"Existencia de procesos de
+Universidad 6,Participacion,Participación Decisoria,Co-Creación De Políticas O Proyectos,Existen iniciativas o políticas diseñadas de manera colaborativa (Coneo_Anual / Conteo_Acumulado)*100.,0.5,0.3333333333333333,0.4166666666666667
+Universidad 6,Participacion,Participación Decisoria,Espacios De Co-Decisión,Existencia de órganos colegiados con representación de la comunidad universitaria o externa.,1.0,1.0,1.0
+Universidad 6,Participacion,Participación Decisoria,Evaluación Participativa,"Existencia de procesos de
 monitoreo y evaluación con participación, estudiantes, ciudadana o académica.",0.0,0.16666666666666666,0.08333333333333333
-Universidad 13,Participacion,Participación Decisoria,Vinculación Social Y Territorial Participativa,"Participación conjunta con
+Universidad 6,Participacion,Participación Decisoria,Vinculación Social Y Territorial Participativa,"Participación conjunta con
 actores externos (ONG, municipios, comunidades). Número de Proyectos gestionados o convenios
 participativos",1.0,0.8333333333333334,0.9166666666666666
-Universidad 13,Participacion,Participación Informativa,Acceso A La Información Participativa,Se publica Información sobre procesos y decisiones,1.0,0.875,0.9375
-Universidad 13,Participacion,Participación Informativa,Comunicación Bidireccional Potencial,Existencia de canales para recibir comentarios o consultas (aunque no se usen).,1.0,1.0,1.0
-Universidad 13,Participacion,Participación Informativa,Difusión De Decisiones Institucionales,"Se publicación de resoluciones y acuerdos institucionales de manera frecuente (Mensual, Trimestral, Semestral, Anual)",0.75,0.75,0.75
-Universidad 13,Participacion,Participación Informativa,Participación En Eventos Informativos,Participación en eventos informativos,1.0,1.0,1.0
-Universidad 14,Participacion,Participación Consultiva,Existencia De Mecanismos De Consulta,"Existe variedad de espacios
+Universidad 6,Participacion,Participación Informativa,Acceso A La Información Participativa,Se publica Información sobre procesos y decisiones,1.0,0.875,0.9375
+Universidad 6,Participacion,Participación Informativa,Comunicación Bidireccional Potencial,Existencia de canales para recibir comentarios o consultas (aunque no se usen).,1.0,1.0,1.0
+Universidad 6,Participacion,Participación Informativa,Difusión De Decisiones Institucionales,"Se publicación de resoluciones y acuerdos institucionales de manera frecuente (Mensual, Trimestral, Semestral, Anual)",0.75,0.75,0.75
+Universidad 6,Participacion,Participación Informativa,Participación En Eventos Informativos,Participación en eventos informativos,1.0,1.0,1.0
+Universidad 7,Participacion,Participación Consultiva,Existencia De Mecanismos De Consulta,"Existe variedad de espacios
 consultivos activos",1.0,0.8333333333333334,0.9166666666666666
-Universidad 14,Participacion,Participación Consultiva,Frecuencia De Participación Consultiva,"Existencia de procesos de
+Universidad 7,Participacion,Participación Consultiva,Frecuencia De Participación Consultiva,"Existencia de procesos de
 consulta con la comunidad universitaria sobre políticas o planes Aprobados.",1.0,0.8333333333333334,0.9166666666666666
-Universidad 14,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
+Universidad 7,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
 grupos internos y externos en las consultas (% de participación de estudiantes, docentes,
 sociedad).",0.5,1.0,0.75
-Universidad 14,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
+Universidad 7,Participacion,Participación Consultiva,Inclusión Y Diversidad En Las Consultas,"Existe Representatividad de
 grupos internos y externos en las consultas (% de participación de estudiantes, docentes, sociedad).",1.0,1.0,1.0
-Universidad 14,Participacion,Participación Consultiva,"Participación Digital
+Universidad 7,Participacion,Participación Consultiva,"Participación Digital
 (Consultiva)","Uso de herramientas
 electrónicas para recoger aportes o encuestas.",0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 14,Participacion,Participación Consultiva,Transparencia De Los Resultados,"Grado de publicación y
+Universidad 7,Participacion,Participación Consultiva,Transparencia De Los Resultados,"Grado de publicación y
 difusión de los aportes recibidos y respuestas institucionales (consultas cuyos resultados se publican / consultas totales).",0.0,0.0,0.0
-Universidad 14,Participacion,Participación Consultiva,"Uso Institucional De Los
+Universidad 7,Participacion,Participación Consultiva,"Uso Institucional De Los
 Aportes","Existe evidencia de que los
 aportes ciudadanos o académicos influyeron en decisiones.",0.0,0.0,0.0
-Universidad 14,Participacion,Participación Consultiva,"Uso Institucional De Los
+Universidad 7,Participacion,Participación Consultiva,"Uso Institucional De Los
 Aportes",Existe evidencia de que los aportes ciudadanos o académicos influyeron en decisiones.,0.0,0.0,0.0
-Universidad 14,Participacion,Participación Decisoria,Co-Creación De Políticas O Proyectos,Existen iniciativas o políticas diseñadas de manera colaborativa (Coneo_Anual / Conteo_Acumulado)*100.,0.0,0.16666666666666666,0.08333333333333333
-Universidad 14,Participacion,Participación Decisoria,Espacios De Co-Decisión,Existencia de órganos colegiados con representación de la comunidad universitaria o externa.,1.0,1.0,1.0
-Universidad 14,Participacion,Participación Decisoria,Evaluación Participativa,"Existencia de procesos de
+Universidad 7,Participacion,Participación Decisoria,Co-Creación De Políticas O Proyectos,Existen iniciativas o políticas diseñadas de manera colaborativa (Coneo_Anual / Conteo_Acumulado)*100.,0.0,0.16666666666666666,0.08333333333333333
+Universidad 7,Participacion,Participación Decisoria,Espacios De Co-Decisión,Existencia de órganos colegiados con representación de la comunidad universitaria o externa.,1.0,1.0,1.0
+Universidad 7,Participacion,Participación Decisoria,Evaluación Participativa,"Existencia de procesos de
 monitoreo y evaluación con participación, estudiantes, ciudadana o académica.",0.8333333333333334,0.6666666666666666,0.75
-Universidad 14,Participacion,Participación Decisoria,Vinculación Social Y Territorial Participativa,"Participación conjunta con
+Universidad 7,Participacion,Participación Decisoria,Vinculación Social Y Territorial Participativa,"Participación conjunta con
 actores externos (ONG, municipios, comunidades). Número de Proyectos gestionados o convenios
 participativos",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 14,Participacion,Participación Informativa,Acceso A La Información Participativa,Se publica Información sobre procesos y decisiones,1.0,0.875,0.9375
-Universidad 14,Participacion,Participación Informativa,Comunicación Bidireccional Potencial,Existencia de canales para recibir comentarios o consultas (aunque no se usen).,1.0,1.0,1.0
-Universidad 14,Participacion,Participación Informativa,Difusión De Decisiones Institucionales,"Se publicación de resoluciones y acuerdos institucionales de manera frecuente (Mensual, Trimestral, Semestral, Anual)",0.75,0.75,0.75
-Universidad 14,Participacion,Participación Informativa,Participación En Eventos Informativos,Participación en eventos informativos,1.0,1.0,1.0
+Universidad 7,Participacion,Participación Informativa,Acceso A La Información Participativa,Se publica Información sobre procesos y decisiones,1.0,0.875,0.9375
+Universidad 7,Participacion,Participación Informativa,Comunicación Bidireccional Potencial,Existencia de canales para recibir comentarios o consultas (aunque no se usen).,1.0,1.0,1.0
+Universidad 7,Participacion,Participación Informativa,Difusión De Decisiones Institucionales,"Se publicación de resoluciones y acuerdos institucionales de manera frecuente (Mensual, Trimestral, Semestral, Anual)",0.75,0.75,0.75
+Universidad 7,Participacion,Participación Informativa,Participación En Eventos Informativos,Participación en eventos informativos,1.0,1.0,1.0
 Universidad 1,Informacion Academica,Información Académica Accesibilidad,"Calidad / Utilidad De La
 Información Académica Publicada","Pertinencia y relevancia de
 la información publicada",0.6666666666666666,0.6666666666666666,0.6666666666666666
@@ -659,128 +519,128 @@ asociados al proceso de titulación (tasas, plazos, normativa, derechos de grado
 Universidad 5,Informacion Academica,Información Académica Transparencia,"Transparencia En La
 Evaluación","Existen criterios específicos
 (ej. rúbricas) con los que serán calificados mis trabajos o proyectos.",1.0,0.5,0.75
-Universidad 13,Informacion Academica,Información Académica Accesibilidad,"Calidad / Utilidad De La
+Universidad 6,Informacion Academica,Información Académica Accesibilidad,"Calidad / Utilidad De La
 Información Académica Publicada","Pertinencia y relevancia de
 la información publicada",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 13,Informacion Academica,Información Académica Accesibilidad,"Claridad De La
+Universidad 6,Informacion Academica,Información Académica Accesibilidad,"Claridad De La
 Información Presentada",Claridad de la información,1.0,1.0,1.0
-Universidad 13,Informacion Academica,Información Académica Accesibilidad,"El Formato En Que Se
+Universidad 6,Informacion Academica,Información Académica Accesibilidad,"El Formato En Que Se
 Publica La Información","Cumplimiento de criterios
 de datos abiertos (disponible, accesible, interoperable, reutilizable)",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Accesibilidad,"Facilidad Para Acceder A
+Universidad 6,Informacion Academica,Información Académica Accesibilidad,"Facilidad Para Acceder A
 La Información Académica",Nivel de facilidad de acceso,0.75,0.75,0.75
-Universidad 13,Informacion Academica,Información Académica Accesibilidad,"Información Académica
+Universidad 6,Informacion Academica,Información Académica Accesibilidad,"Información Académica
 Publicada","Existencia de información
 académica publicada",0.8333333333333334,0.6666666666666666,0.75
-Universidad 13,Informacion Academica,Información Académica Actualización De Información,"Actualización De La
+Universidad 6,Informacion Academica,Información Académica Actualización De Información,"Actualización De La
 Plantilla Docente","Precisión del Directorio
 Académico",0.5,0.5,0.5
-Universidad 13,Informacion Academica,Información Académica Actualización De Información,"Oportunidad En El
+Universidad 6,Informacion Academica,Información Académica Actualización De Información,"Oportunidad En El
 Calendario Académico","Antelación de Publicación
 de Fechas.",0.16666666666666666,0.16666666666666666,0.16666666666666666
-Universidad 13,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Normativa
+Universidad 6,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Normativa
 Educativa","Vigencia del Marco
 Regulatorio",0.5,0.5,0.5
-Universidad 13,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Oferta
+Universidad 6,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Oferta
 Académica","Existencia de información
 que dé a conocer la vigencia de la oferta académica, además de un historial de publicaciones",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Difusión De Resultados,"Información Publicada
+Universidad 6,Informacion Academica,Información Académica Difusión De Resultados,"Información Publicada
 Refleja Información Por Cada Período (Semestres, Años), Es Decir Se Publica Información Y Se Actualiza Para Cada Período.","Cumplimiento en la
 periodicidad de actualización de información",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
+Universidad 6,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
 Investigación Y Producción Científica","Visibilidad y Acceso a la
 Producción Científica.",0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 13,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
+Universidad 6,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
 Vinculación Y Transferencia De Conocimiento","Existencia de información
 publicada relativa a resultados de vinculación y transferencia de
 conocimiento",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De Docencia
+Universidad 6,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De Docencia
 Y Empleabilidad","Publicación de información
 de Inserción Laboral y Calidad de la Graduación.",0.16666666666666666,0.16666666666666666,0.16666666666666666
-Universidad 13,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De La
+Universidad 6,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De La
 Gestión De Calidad (Acreditación)","Publicidad de los procesos
 de Evaluación y Acreditación.",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Servicio Al Estudiante,"Acompañamiento Y
+Universidad 6,Informacion Academica,Información Académica Servicio Al Estudiante,"Acompañamiento Y
 Tutorías Académicas.","Accesibilidad al Sistema de
 Tutorías.",0.0,0.0,0.0
-Universidad 13,Informacion Academica,Información Académica Servicio Al Estudiante,"Bienestar Y Apoyo
+Universidad 6,Informacion Academica,Información Académica Servicio Al Estudiante,"Bienestar Y Apoyo
 Económico (Becas)","Publicidad de Criterios de
 Selección para becas",1.0,0.5,0.75
-Universidad 13,Informacion Academica,Información Académica Servicio Al Estudiante,"Canales De Ǫuejas Y
+Universidad 6,Informacion Academica,Información Académica Servicio Al Estudiante,"Canales De Ǫuejas Y
 Sugerencias (Voz Estudiantil).","Existencia del Buzón de
 Transparencia.",0.16666666666666666,0.16666666666666666,0.16666666666666666
-Universidad 13,Informacion Academica,Información Académica Servicio Al Estudiante,"Infraestructura Y
+Universidad 6,Informacion Academica,Información Académica Servicio Al Estudiante,"Infraestructura Y
 Recursos De Aprendizaje","Disponibilidad de
 Inventarios de Recursos",0.0,0.16666666666666666,0.08333333333333333
-Universidad 13,Informacion Academica,Información Académica Transparencia,"Transparencia En
+Universidad 6,Informacion Academica,Información Académica Transparencia,"Transparencia En
 Admisión Y Matrícula","Existencia de Publicidad,
 criterios de selección, descripción del proceso de admisión y matricula.",0.5,0.75,0.625
-Universidad 13,Informacion Academica,Información Académica Transparencia,"Transparencia En
+Universidad 6,Informacion Academica,Información Académica Transparencia,"Transparencia En
 Titulación Y Graduación","Existencia de criterios
 asociados al proceso de titulación (tasas, plazos, normativa, derechos de grado, etc.) con suficiente antelación.",0.25,0.25,0.25
-Universidad 13,Informacion Academica,Información Académica Transparencia,"Transparencia En La
+Universidad 6,Informacion Academica,Información Académica Transparencia,"Transparencia En La
 Evaluación","Existen criterios específicos
 (ej. rúbricas) con los que serán calificados mis trabajos o proyectos.",0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 14,Informacion Academica,Información Académica Accesibilidad,"Calidad / Utilidad De La
+Universidad 7,Informacion Academica,Información Académica Accesibilidad,"Calidad / Utilidad De La
 Información Académica Publicada","Pertinencia y relevancia de
 la información publicada",0.5,0.5,0.5
-Universidad 14,Informacion Academica,Información Académica Accesibilidad,"Claridad De La
+Universidad 7,Informacion Academica,Información Académica Accesibilidad,"Claridad De La
 Información Presentada",Claridad de la información,0.8333333333333334,0.8333333333333334,0.8333333333333334
-Universidad 14,Informacion Academica,Información Académica Accesibilidad,"El Formato En Que Se
+Universidad 7,Informacion Academica,Información Académica Accesibilidad,"El Formato En Que Se
 Publica La Información","Cumplimiento de criterios
 de datos abiertos (disponible, accesible, interoperable, reutilizable)",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Accesibilidad,"Facilidad Para Acceder A
+Universidad 7,Informacion Academica,Información Académica Accesibilidad,"Facilidad Para Acceder A
 La Información Académica",Nivel de facilidad de acceso,0.5,0.5,0.5
-Universidad 14,Informacion Academica,Información Académica Accesibilidad,"Información Académica
+Universidad 7,Informacion Academica,Información Académica Accesibilidad,"Información Académica
 Publicada","Existencia de información
 académica publicada",0.5,0.5,0.5
-Universidad 14,Informacion Academica,Información Académica Actualización De Información,"Actualización De La
+Universidad 7,Informacion Academica,Información Académica Actualización De Información,"Actualización De La
 Plantilla Docente","Precisión del Directorio
 Académico",0.0,0.0,0.0
-Universidad 14,Informacion Academica,Información Académica Actualización De Información,"Oportunidad En El
+Universidad 7,Informacion Academica,Información Académica Actualización De Información,"Oportunidad En El
 Calendario Académico","Antelación de Publicación
 de Fechas.",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Normativa
+Universidad 7,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Normativa
 Educativa","Vigencia del Marco
 Regulatorio",1.0,0.0,0.5
-Universidad 14,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Oferta
+Universidad 7,Informacion Academica,Información Académica Actualización De Información,"Vigencia De La Oferta
 Académica","Existencia de información
 que dé a conocer la vigencia de la oferta académica, además de un historial de publicaciones",0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 14,Informacion Academica,Información Académica Difusión De Resultados,"Información Publicada
+Universidad 7,Informacion Academica,Información Académica Difusión De Resultados,"Información Publicada
 Refleja Información Por Cada Período (Semestres, Años), Es Decir Se Publica Información Y Se Actualiza Para Cada Período.","Cumplimiento en la
 periodicidad de actualización de información",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
+Universidad 7,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
 Investigación Y Producción Científica","Visibilidad y Acceso a la
 Producción Científica.",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
+Universidad 7,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De
 Vinculación Y Transferencia De Conocimiento","Existencia de información
 publicada relativa a resultados de vinculación y transferencia de
 conocimiento",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De Docencia
+Universidad 7,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De Docencia
 Y Empleabilidad","Publicación de información
 de Inserción Laboral y Calidad de la Graduación.",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 14,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De La
+Universidad 7,Informacion Academica,Información Académica Difusión De Resultados,"Resultados De La
 Gestión De Calidad (Acreditación)","Publicidad de los procesos
 de Evaluación y Acreditación.",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Servicio Al Estudiante,"Acompañamiento Y
+Universidad 7,Informacion Academica,Información Académica Servicio Al Estudiante,"Acompañamiento Y
 Tutorías Académicas.","Accesibilidad al Sistema de
 Tutorías.",0.0,0.0,0.0
-Universidad 14,Informacion Academica,Información Académica Servicio Al Estudiante,"Bienestar Y Apoyo
+Universidad 7,Informacion Academica,Información Académica Servicio Al Estudiante,"Bienestar Y Apoyo
 Económico (Becas)","Publicidad de Criterios de
 Selección para becas",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Servicio Al Estudiante,"Canales De Ǫuejas Y
+Universidad 7,Informacion Academica,Información Académica Servicio Al Estudiante,"Canales De Ǫuejas Y
 Sugerencias (Voz Estudiantil).","Existencia del Buzón de
 Transparencia.",0.0,0.0,0.0
-Universidad 14,Informacion Academica,Información Académica Servicio Al Estudiante,"Infraestructura Y
+Universidad 7,Informacion Academica,Información Académica Servicio Al Estudiante,"Infraestructura Y
 Recursos De Aprendizaje","Disponibilidad de
 Inventarios de Recursos",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 14,Informacion Academica,Información Académica Transparencia,"Transparencia En
+Universidad 7,Informacion Academica,Información Académica Transparencia,"Transparencia En
 Admisión Y Matrícula","Existencia de Publicidad,
 criterios de selección, descripción del proceso de admisión y matricula.",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Transparencia,"Transparencia En
+Universidad 7,Informacion Academica,Información Académica Transparencia,"Transparencia En
 Titulación Y Graduación","Existencia de criterios
 asociados al proceso de titulación (tasas, plazos, normativa, derechos de grado, etc.) con suficiente antelación.",1.0,1.0,1.0
-Universidad 14,Informacion Academica,Información Académica Transparencia,"Transparencia En La
+Universidad 7,Informacion Academica,Información Académica Transparencia,"Transparencia En La
 Evaluación","Existen criterios específicos
 (ej. rúbricas) con los que serán calificados mis trabajos o proyectos.",0.5,0.5,0.5
 Universidad 1,Comunicación,Comunicación Y Rendición De Cuentas,"Accesibilidad Y Lenguaje
@@ -868,39 +728,39 @@ De Rendición","Tipo de participación en
 Actos de Rendición",0.625,0.625,0.625
 Universidad 5,Comunicación,Comunicación Y Rendición De Cuentas,"Seguimiento Y
 Cumplimiento De Compromisos",Existencia de documentos que certifiquen el seguimiento y cumplimiento de compromisos,0.25,0.25,0.25
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Accesibilidad Y Lenguaje
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Accesibilidad Y Lenguaje
 Ciudadano","Grado de implementación
 de ""Lenguaje Claro"" y estándares WCAG en la comunicación.",1.0,0.5,0.75
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Canales De Interacción Y
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Canales De Interacción Y
 Respuesta","Existencia de respuesta
 efectiva por canales oficiales (Redes sociales, buzones, chat).",1.0,0.875,0.9375
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Estrategia De
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Estrategia De
 Comunicación Institucional","Nivel de alineación de la
 estrategia de comunicación con los principios de Gobierno Abierto",0.75,0.625,0.6875
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Frecuencia De Informes
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Frecuencia De Informes
 Públicos","Periodicidad de publicación
 de informes de gestión en base a normativa vigente",1.0,1.0,1.0
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Participación En Actos
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Participación En Actos
 De Rendición","Tipo de participación en
 Actos de Rendición",1.0,0.625,0.8125
-Universidad 13,Comunicación,Comunicación Y Rendición De Cuentas,"Seguimiento Y
+Universidad 6,Comunicación,Comunicación Y Rendición De Cuentas,"Seguimiento Y
 Cumplimiento De Compromisos",Existencia de documentos que certifiquen el seguimiento y cumplimiento de compromisos,1.0,0.125,0.5625
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Accesibilidad Y Lenguaje
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Accesibilidad Y Lenguaje
 Ciudadano","Grado de implementación
 de ""Lenguaje Claro"" y estándares WCAG en la comunicación.",0.5,0.5,0.5
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Canales De Interacción Y
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Canales De Interacción Y
 Respuesta","Existencia de respuesta
 efectiva por canales oficiales (Redes sociales, buzones, chat).",0.75,0.75,0.75
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Estrategia De
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Estrategia De
 Comunicación Institucional","Nivel de alineación de la
 estrategia de comunicación con los principios de Gobierno Abierto",0.75,0.625,0.6875
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Frecuencia De Informes
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Frecuencia De Informes
 Públicos","Periodicidad de publicación
 de informes de gestión en base a normativa vigente",0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Participación En Actos
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Participación En Actos
 De Rendición","Tipo de participación en
 Actos de Rendición",0.625,0.625,0.625
-Universidad 14,Comunicación,Comunicación Y Rendición De Cuentas,"Seguimiento Y
+Universidad 7,Comunicación,Comunicación Y Rendición De Cuentas,"Seguimiento Y
 Cumplimiento De Compromisos",Existencia de documentos que certifiquen el seguimiento y cumplimiento de compromisos,0.125,0.125,0.125
 Universidad 1,Transformacion Digital,Transformacion Digital,Datos Abiertos E Interoperabilidad,Calidad de Datos Abiertos (Basado en el modelo de 5 estrellas de Tim Berners-Lee).,0.6666666666666666,0.6666666666666666,0.6666666666666666
 Universidad 1,Transformacion Digital,Transformacion Digital,Estrategia Institucional De Innovación Y / O Td,Nivel de Madurez de la Estrategia de Transformación Digital,0.75,0.375,0.5625
@@ -927,16 +787,16 @@ Universidad 5,Transformacion Digital,Transformacion Digital,Estrategia Instituci
 Universidad 5,Transformacion Digital,Transformacion Digital,Innovación En Servicios Académicos,Digitalización de Servicios Académicos de Extremo a Extremo.,1.0,1.0,1.0
 Universidad 5,Transformacion Digital,Transformacion Digital,Mecanismos Para Evaluación De Impacto De La Innovación,Índice de Efectividad y Retorno de Valor de la Innovación (IEVI).,0.8333333333333334,0.6666666666666666,0.75
 Universidad 5,Transformacion Digital,Transformacion Digital,Uso De Ti Para Transparencia Y Acceso A Información,Usabilidad Tecnológica para la Transparencia (IUTT),0.75,0.25,0.5
-Universidad 13,Transformacion Digital,Transformacion Digital,Datos Abiertos E Interoperabilidad,Calidad de Datos Abiertos (Basado en el modelo de 5 estrellas de Tim Berners-Lee).,0.6666666666666666,0.3333333333333333,0.5
-Universidad 13,Transformacion Digital,Transformacion Digital,Estrategia Institucional De Innovación Y / O Td,Nivel de Madurez de la Estrategia de Transformación Digital,0.875,0.375,0.625
-Universidad 13,Transformacion Digital,Transformacion Digital,Innovación En Servicios Académicos,Digitalización de Servicios Académicos de Extremo a Extremo.,1.0,1.0,1.0
-Universidad 13,Transformacion Digital,Transformacion Digital,Mecanismos Para Evaluación De Impacto De La Innovación,Índice de Efectividad y Retorno de Valor de la Innovación (IEVI).,0.8333333333333334,0.6666666666666666,0.75
-Universidad 13,Transformacion Digital,Transformacion Digital,Uso De Ti Para Transparencia Y Acceso A Información,Usabilidad Tecnológica para la Transparencia (IUTT),0.875,0.25,0.5625
-Universidad 14,Transformacion Digital,Transformacion Digital,Datos Abiertos E Interoperabilidad,Calidad de Datos Abiertos (Basado en el modelo de 5 estrellas de Tim Berners-Lee).,1.0,1.0,1.0
-Universidad 14,Transformacion Digital,Transformacion Digital,Estrategia Institucional De Innovación Y / O Td,Nivel de Madurez de la Estrategia de Transformación Digital,0.875,0.75,0.8125
-Universidad 14,Transformacion Digital,Transformacion Digital,Innovación En Servicios Académicos,Digitalización de Servicios Académicos de Extremo a Extremo.,1.0,1.0,1.0
-Universidad 14,Transformacion Digital,Transformacion Digital,Mecanismos Para Evaluación De Impacto De La Innovación,Índice de Efectividad y Retorno de Valor de la Innovación (IEVI).,0.8333333333333334,0.6666666666666666,0.75
-Universidad 14,Transformacion Digital,Transformacion Digital,Uso De Ti Para Transparencia Y Acceso A Información,Usabilidad Tecnológica para la Transparencia (IUTT),0.625,0.25,0.4375
+Universidad 6,Transformacion Digital,Transformacion Digital,Datos Abiertos E Interoperabilidad,Calidad de Datos Abiertos (Basado en el modelo de 5 estrellas de Tim Berners-Lee).,0.6666666666666666,0.3333333333333333,0.5
+Universidad 6,Transformacion Digital,Transformacion Digital,Estrategia Institucional De Innovación Y / O Td,Nivel de Madurez de la Estrategia de Transformación Digital,0.875,0.375,0.625
+Universidad 6,Transformacion Digital,Transformacion Digital,Innovación En Servicios Académicos,Digitalización de Servicios Académicos de Extremo a Extremo.,1.0,1.0,1.0
+Universidad 6,Transformacion Digital,Transformacion Digital,Mecanismos Para Evaluación De Impacto De La Innovación,Índice de Efectividad y Retorno de Valor de la Innovación (IEVI).,0.8333333333333334,0.6666666666666666,0.75
+Universidad 6,Transformacion Digital,Transformacion Digital,Uso De Ti Para Transparencia Y Acceso A Información,Usabilidad Tecnológica para la Transparencia (IUTT),0.875,0.25,0.5625
+Universidad 7,Transformacion Digital,Transformacion Digital,Datos Abiertos E Interoperabilidad,Calidad de Datos Abiertos (Basado en el modelo de 5 estrellas de Tim Berners-Lee).,1.0,1.0,1.0
+Universidad 7,Transformacion Digital,Transformacion Digital,Estrategia Institucional De Innovación Y / O Td,Nivel de Madurez de la Estrategia de Transformación Digital,0.875,0.75,0.8125
+Universidad 7,Transformacion Digital,Transformacion Digital,Innovación En Servicios Académicos,Digitalización de Servicios Académicos de Extremo a Extremo.,1.0,1.0,1.0
+Universidad 7,Transformacion Digital,Transformacion Digital,Mecanismos Para Evaluación De Impacto De La Innovación,Índice de Efectividad y Retorno de Valor de la Innovación (IEVI).,0.8333333333333334,0.6666666666666666,0.75
+Universidad 7,Transformacion Digital,Transformacion Digital,Uso De Ti Para Transparencia Y Acceso A Información,Usabilidad Tecnológica para la Transparencia (IUTT),0.625,0.25,0.4375
 Universidad 1,Investigacion,Investigacion,Ciencia Abierta Y Acceso A La Información Científica,Producción científica disponible en Acceso Abierto (Open Access).,0.6666666666666666,0.6666666666666666,0.6666666666666666
 Universidad 1,Investigacion,Investigacion,Colaboración E Internacionalización,Coautoría Internacional y Redes de Cooperación.,1.0,0.6666666666666666,0.8333333333333334
 Universidad 1,Investigacion,Investigacion,Difusión Y Transferencia Del Conocimiento,"Evidencias de las actividades, tareas de difusión y transferencia del conocimiento",0.6666666666666666,0.8333333333333334,0.75
@@ -977,19 +837,19 @@ Universidad 5,Investigacion,Investigacion,Política Y Planificación De La Inves
 Universidad 5,Investigacion,Investigacion,Producción Científica,Repositorios con la producción científica de la IES,1.0,1.0,1.0
 Universidad 5,Investigacion,Investigacion,Vinculación Entre Investigación Y Docencia,Existencia de Integración de resultados de investigación en los sílabos académicos.,0.6666666666666666,0.6666666666666666,0.6666666666666666
 Universidad 5,Investigacion,Investigacion,Ética Y Calidad En La Investigación,Cumplimiento de Estándares Éticos (ICEE).,0.3333333333333333,0.3333333333333333,0.3333333333333333
-Universidad 13,Investigacion,Investigacion,Ciencia Abierta Y Acceso A La Información Científica,Producción científica disponible en Acceso Abierto (Open Access).,0.6666666666666666,0.8333333333333334,0.75
-Universidad 13,Investigacion,Investigacion,Colaboración E Internacionalización,Coautoría Internacional y Redes de Cooperación.,0.8333333333333334,0.8333333333333334,0.8333333333333334
-Universidad 13,Investigacion,Investigacion,Difusión Y Transferencia Del Conocimiento,"Evidencias de las actividades, tareas de difusión y transferencia del conocimiento",0.8333333333333334,0.8333333333333334,0.8333333333333334
-Universidad 13,Investigacion,Investigacion,Gestión De La Investigación,Índice de Transparencia y Eficiencia en la Gestión de Fondos (ITEG).,0.8333333333333334,0.3333333333333333,0.5833333333333334
-Universidad 13,Investigacion,Investigacion,Política Y Planificación De La Investigación,Nivel de institucionalización y publicidad de la política de investigación.,0.8333333333333334,0.5,0.6666666666666666
-Universidad 13,Investigacion,Investigacion,Producción Científica,Repositorios con la producción científica de la IES,0.5,0.5,0.5
-Universidad 13,Investigacion,Investigacion,Vinculación Entre Investigación Y Docencia,Existencia de Integración de resultados de investigación en los sílabos académicos.,0.3333333333333333,0.16666666666666666,0.25
-Universidad 13,Investigacion,Investigacion,Ética Y Calidad En La Investigación,Cumplimiento de Estándares Éticos (ICEE).,0.6666666666666666,0.6666666666666666,0.6666666666666666
-Universidad 14,Investigacion,Investigacion,Ciencia Abierta Y Acceso A La Información Científica,Producción científica disponible en Acceso Abierto (Open Access).,1.0,0.8333333333333334,0.9166666666666666
-Universidad 14,Investigacion,Investigacion,Colaboración E Internacionalización,Coautoría Internacional y Redes de Cooperación.,1.0,1.0,1.0
-Universidad 14,Investigacion,Investigacion,Difusión Y Transferencia Del Conocimiento,"Evidencias de las actividades, tareas de difusión y transferencia del conocimiento",0.8333333333333334,0.6666666666666666,0.75
-Universidad 14,Investigacion,Investigacion,Gestión De La Investigación,Índice de Transparencia y Eficiencia en la Gestión de Fondos (ITEG).,1.0,0.3333333333333333,0.6666666666666666
-Universidad 14,Investigacion,Investigacion,Política Y Planificación De La Investigación,Nivel de institucionalización y publicidad de la política de investigación.,1.0,0.6666666666666666,0.8333333333333334
-Universidad 14,Investigacion,Investigacion,Producción Científica,Repositorios con la producción científica de la IES,1.0,0.8333333333333334,0.9166666666666666
-Universidad 14,Investigacion,Investigacion,Vinculación Entre Investigación Y Docencia,Existencia de Integración de resultados de investigación en los sílabos académicos.,0.8333333333333334,0.6666666666666666,0.75
-Universidad 14,Investigacion,Investigacion,Ética Y Calidad En La Investigación,Cumplimiento de Estándares Éticos (ICEE).,0.6666666666666666,0.6666666666666666,0.6666666666666666
+Universidad 6,Investigacion,Investigacion,Ciencia Abierta Y Acceso A La Información Científica,Producción científica disponible en Acceso Abierto (Open Access).,0.6666666666666666,0.8333333333333334,0.75
+Universidad 6,Investigacion,Investigacion,Colaboración E Internacionalización,Coautoría Internacional y Redes de Cooperación.,0.8333333333333334,0.8333333333333334,0.8333333333333334
+Universidad 6,Investigacion,Investigacion,Difusión Y Transferencia Del Conocimiento,"Evidencias de las actividades, tareas de difusión y transferencia del conocimiento",0.8333333333333334,0.8333333333333334,0.8333333333333334
+Universidad 6,Investigacion,Investigacion,Gestión De La Investigación,Índice de Transparencia y Eficiencia en la Gestión de Fondos (ITEG).,0.8333333333333334,0.3333333333333333,0.5833333333333334
+Universidad 6,Investigacion,Investigacion,Política Y Planificación De La Investigación,Nivel de institucionalización y publicidad de la política de investigación.,0.8333333333333334,0.5,0.6666666666666666
+Universidad 6,Investigacion,Investigacion,Producción Científica,Repositorios con la producción científica de la IES,0.5,0.5,0.5
+Universidad 6,Investigacion,Investigacion,Vinculación Entre Investigación Y Docencia,Existencia de Integración de resultados de investigación en los sílabos académicos.,0.3333333333333333,0.16666666666666666,0.25
+Universidad 6,Investigacion,Investigacion,Ética Y Calidad En La Investigación,Cumplimiento de Estándares Éticos (ICEE).,0.6666666666666666,0.6666666666666666,0.6666666666666666
+Universidad 7,Investigacion,Investigacion,Ciencia Abierta Y Acceso A La Información Científica,Producción científica disponible en Acceso Abierto (Open Access).,1.0,0.8333333333333334,0.9166666666666666
+Universidad 7,Investigacion,Investigacion,Colaboración E Internacionalización,Coautoría Internacional y Redes de Cooperación.,1.0,1.0,1.0
+Universidad 7,Investigacion,Investigacion,Difusión Y Transferencia Del Conocimiento,"Evidencias de las actividades, tareas de difusión y transferencia del conocimiento",0.8333333333333334,0.6666666666666666,0.75
+Universidad 7,Investigacion,Investigacion,Gestión De La Investigación,Índice de Transparencia y Eficiencia en la Gestión de Fondos (ITEG).,1.0,0.3333333333333333,0.6666666666666666
+Universidad 7,Investigacion,Investigacion,Política Y Planificación De La Investigación,Nivel de institucionalización y publicidad de la política de investigación.,1.0,0.6666666666666666,0.8333333333333334
+Universidad 7,Investigacion,Investigacion,Producción Científica,Repositorios con la producción científica de la IES,1.0,0.8333333333333334,0.9166666666666666
+Universidad 7,Investigacion,Investigacion,Vinculación Entre Investigación Y Docencia,Existencia de Integración de resultados de investigación en los sílabos académicos.,0.8333333333333334,0.6666666666666666,0.75
+Universidad 7,Investigacion,Investigacion,Ética Y Calidad En La Investigación,Cumplimiento de Estándares Éticos (ICEE).,0.6666666666666666,0.6666666666666666,0.6666666666666666

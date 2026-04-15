@@ -123,11 +123,21 @@ def main():
     # Concatenar todo
     final_df = pd.concat(all_data, ignore_index=True)
 
+    # --- CORRECCIÓN: Filtrado Estricto de EIS Válidas ---
+    # Algunas hojas traen "UNIVERSIDAD 1, 2, ..." como ruido o placeholders.
+    # Solo procesaremos las 7 oficiales.
+    EIS_OFICIALES = ["ESPOL", "UNL", "EPN", "UTEQ", "ESPOCH", "UNEMI", "ESPE"]
+    
+    # Asegurar limpieza de nombres antes de filtrar
+    final_df['EIS'] = final_df['EIS'].astype(str).str.strip().str.upper()
+    final_df = final_df[final_df['EIS'].isin(EIS_OFICIALES)].copy()
+
     # --- NUEVO: Anonimización Dinámica ---
+    # Ordenamos para asegurar que Universidad 1 sea siempre la misma
     real_eis = sorted(final_df['EIS'].unique())
     anonymization_map = {name: f"Universidad {i+1}" for i, name in enumerate(real_eis)}
     
-    print("\n--- MAPA DE ANONIMIZACIÓN ---")
+    print("\n--- MAPA DE ANONIMIZACIÓN (PURGADO) ---")
     for real, anon in anonymization_map.items():
         print(f"{real} -> {anon}")
     print("-----------------------------\n")
@@ -138,7 +148,7 @@ def main():
     output_file = 'dataset_ettalent_clean.csv'
     final_df.to_csv(output_file, index=False, encoding='utf-8-sig')
     print(f"\nArchivo guardado exitosamente: {output_file}")
-    print(f"Total de registros: {len(final_df)}")
+    print(f"Total de registros limpios: {len(final_df)}")
 
 if __name__ == "__main__":
     main()
