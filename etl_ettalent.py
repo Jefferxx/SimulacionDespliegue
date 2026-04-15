@@ -11,6 +11,7 @@ def clean_column_name(col):
         'DIMENSION': 'DIMENSION',
         'VARIABLE': 'VARIABLE',
         'INDICADOR': 'INDICADOR',
+        'PREGUNTA': 'PREGUNTA',
         'PUNTAJE': 'PUNTAJE_1',
         'PUNTAJE 1': 'PUNTAJE_1',
         'PUNTAJE_1': 'PUNTAJE_1',
@@ -32,7 +33,6 @@ def process_sheet(file_path, sheet_name, skiprows):
     for col in df.columns:
         clean_col = clean_column_name(col)
         # Si ya hemos visto este nombre de columna (limpio), le añadimos un sufijo
-        # Para este caso, queremos el primero (lado izquierdo), así que ignoramos los siguientes
         if clean_col in seen:
             new_columns.append(f"{clean_col}_DUP")
         else:
@@ -41,8 +41,8 @@ def process_sheet(file_path, sheet_name, skiprows):
     
     df.columns = new_columns
     
-    # Seleccionar solo las columnas necesarias (las del lado izquierdo)
-    cols_to_keep = ['EIS', 'DIMENSION', 'VARIABLE', 'INDICADOR', 'PUNTAJE_1', 'PUNTAJE_2']
+    # Seleccionar solo las columnas necesarias (incluyendo PREGUNTA para granularidad profunda)
+    cols_to_keep = ['EIS', 'DIMENSION', 'VARIABLE', 'INDICADOR', 'PREGUNTA', 'PUNTAJE_1', 'PUNTAJE_2']
     
     existing_cols = [c for c in cols_to_keep if c in df.columns]
     df = df[existing_cols].copy()
@@ -66,28 +66,34 @@ def process_sheet(file_path, sheet_name, skiprows):
     for col in ['PUNTAJE_1', 'PUNTAJE_2']:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
+        else:
+            df[col] = 0 # Asegurar que existe la columna
             
-    # Calcular PROMEDIO igual que la fórmula del Excel:
-    # si puntaje_2 falta (NaN), se trata como 0 → (p1 + 0) / 2
-    # Esto evita inflar el promedio cuando no hay segundo evaluador.
+    # Calcular PROMEDIO igual que la fórmula del Excel
     df['PUNTAJE_2'] = df['PUNTAJE_2'].fillna(0)
+    df['PUNTAJE_1'] = df['PUNTAJE_1'].fillna(0)
     df['PROMEDIO'] = (df['PUNTAJE_1'] + df['PUNTAJE_2']) / 2
     
     # Agregar columna HOJA
     sheet_clean_name = sheet_name.replace('d_', '').replace('_', ' ').title()
     df['HOJA'] = sheet_clean_name
+
+    # --- NUEVO: Agregación de Datos (Resolviendo granularidad de PREGUNTA) ---
+    # Agrupamos por los niveles jerárquicos y calculamos el promedio
+    group_cols = ['EIS', 'HOJA', 'DIMENSION', 'VARIABLE', 'INDICADOR']
+    df = df.groupby(group_cols).mean(numeric_only=True).reset_index()
     
     # Reordenar columnas para consistencia
     final_cols = ['EIS', 'HOJA', 'DIMENSION', 'VARIABLE', 'INDICADOR', 'PUNTAJE_1', 'PUNTAJE_2', 'PROMEDIO']
     df = df.reindex(columns=final_cols)
     
-    # Eliminar filas donde PROMEDIO sea NaN (esto filtra encabezados y zonas vacías)
+    # Eliminar filas donde PROMEDIO sea NaN
     df = df.dropna(subset=['PROMEDIO'])
     
     return df
 
 def main():
-    file_path = 'datset actual 1.xlsx'
+    file_path = 'datset actual.xlsx'
     if not os.path.exists(file_path):
         print(f"Error: No se encuentra el archivo {file_path}")
         return
@@ -116,11 +122,17 @@ def main():
         
     # Concatenar todo
     final_df = pd.concat(all_data, ignore_index=True)
+
+    # --- NUEVO: Anonimización Dinámica ---
+    real_eis = sorted(final_df['EIS'].unique())
+    anonymization_map = {name: f"Universidad {i+1}" for i, name in enumerate(real_eis)}
     
-    # Limpieza final: Asegurarse de que solo hay 7 EIS
-    # Vamos a imprimir las EIS encontradas para verificación
-    print("\nEIS encontradas en el dataset:")
-    print(final_df['EIS'].unique())
+    print("\n--- MAPA DE ANONIMIZACIÓN ---")
+    for real, anon in anonymization_map.items():
+        print(f"{real} -> {anon}")
+    print("-----------------------------\n")
+    
+    final_df['EIS'] = final_df['EIS'].map(anonymization_map)
     
     # Exportar a CSV
     output_file = 'dataset_ettalent_clean.csv'
