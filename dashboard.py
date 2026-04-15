@@ -27,13 +27,13 @@ C_BORDER    = "#e0e0e0"
 
 # Colores dinámicos para Universidades Anónimas
 def get_eis_color(eis_name):
-    # Paleta de 14 colores para hasta 14 universidades
+    # Paleta de 7 colores para las 7 universidades oficiales
     colors = [
         "#1863dc", "#00897b", "#7b1fa2", "#f57c00", "#bc0712", 
-        "#455a64", "#2e7d32", "#d32f2f", "#1976d2", "#388e3c",
-        "#fbc02d", "#afb42b", "#5d4037", "#616161"
+        "#455a64", "#2e7d32"
     ]
     try:
+        # Extraer el número de "Universidad X"
         idx = int(eis_name.split(" ")[-1]) - 1
         return colors[idx % len(colors)]
     except:
@@ -127,10 +127,10 @@ div.block-container { padding: 0 !important; max-width: 100% !important; }
     height: 100%;
 }
 .kpi-lbl {
-    font-size: 9px; font-weight: 700; color: #9ca3af;
+    font-size: 10px; font-weight: 700; color: #9ca3af;
     text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;
 }
-.kpi-val  { font-size: 26px; font-weight: 800; line-height: 1; margin: 0; }
+.kpi-val  { font-size: 28px; font-weight: 800; line-height: 1; margin: 0; }
 .kpi-sub  { font-size: 10px; color: #6b7280; margin-top: 4px; }
 
 /* Título de sección */
@@ -207,7 +207,8 @@ st.markdown(f"""
 # ──────────────────────────────────────────────────────────────
 # OPCIONES DE FILTRO
 # ──────────────────────────────────────────────────────────────
-eis_opts  = sorted(df_raw["EIS"].unique(), key=lambda x: int(x.split(" ")[-1]))
+# Asegurar orden numérico para "Universidad 1, Universidad 2..."
+eis_opts  = sorted(df_raw["EIS"].unique(), key=lambda x: int(x.split(" ")[-1]) if "Universidad" in x else x)
 hoja_opts = sorted(df_raw["HOJA"].unique())
 dim_opts  = sorted(df_raw["DIMENSION"].unique())
 
@@ -412,18 +413,20 @@ with col_m:
 
     grp = (df.groupby(["HOJA", "EIS"])["PROMEDIO"].mean() * 100).reset_index()
     fig_grp = go.Figure()
-    for eis in sorted(grp["EIS"].unique(), key=lambda x: int(x.split(" ")[-1])):
+    # Ordenar universidades numéricamente para la leyenda
+    sorted_eis = sorted(grp["EIS"].unique(), key=lambda x: int(x.split(" ")[-1]) if "Universidad" in x else x)
+    for eis in sorted_eis:
         sub = grp[grp["EIS"] == eis]
         fig_grp.add_trace(go.Bar(
-            name=eis, x=sub["HOJA"], y=sub["PCT" if "PCT" in sub else "PROMEDIO"],
+            name=eis, x=sub["HOJA"], y=sub["PROMEDIO"],
             marker_color=get_eis_color(eis),
         ))
     fig_grp.update_layout(
         **BASE_LAYOUT,
-        barmode="group", height=280,
-        margin=dict(l=0, r=0, t=10, b=30),
+        barmode="group", height=300,
+        margin=dict(l=0, r=0, t=10, b=40),
         yaxis=dict(range=[0, 110], ticksuffix="%"),
-        legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center"),
+        legend=dict(orientation="h", y=-0.25, x=0.5, xanchor="center"),
     )
     st.plotly_chart(fig_grp, use_container_width=True, config=PCFG)
     st.markdown('</div>', unsafe_allow_html=True)
@@ -460,4 +463,3 @@ with col_m:
         <div style="color:#9e9e9e; font-size:9px;">ESPOCH &middot; Prácticas Laborales &middot; 2026</div>
     </div>
     """, unsafe_allow_html=True)
-
