@@ -4,9 +4,9 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # CONFIGURACIÓN DE PÁGINA
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Dashboard ETalent · ESPOCH",
     page_icon="🎓",
@@ -14,277 +14,323 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ──────────────────────────────────────────────────────────────
-# ESTILOS GLOBALES
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
+# ESTILOS — Power BI / Looker institucional
+# ──────────────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Fondo general */
-[data-testid="stAppViewContainer"] { background-color: #EEF2F7; }
-[data-testid="stHeader"]           { background: transparent; }
-div.block-container                { padding: 0.6rem 1.8rem 0.6rem 1.8rem; }
-
-/* Ocultar chrome de Streamlit */
-#MainMenu, footer, [data-testid="stToolbar"] { visibility: hidden; }
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: #F1F5F9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+[data-testid="stHeader"]  { background: transparent !important; }
+#MainMenu, footer, [data-testid="stToolbar"],
+[data-testid="stSidebarCollapseButton"] { visibility: hidden !important; }
+div.block-container { padding: 0.55rem 1.6rem 0.4rem 1.6rem; }
 
 /* ── Sidebar ── */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0F172A 0%, #1E3A5F 100%);
-    border-right: 1px solid #2D4A6B;
+    background: linear-gradient(170deg, #0D1B2A 0%, #0F2744 55%, #1A3F6F 100%) !important;
+    border-right: 1px solid rgba(255,255,255,0.06);
 }
 [data-testid="stSidebar"] * { color: #CBD5E1 !important; }
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3 { color: #F8FAFC !important; }
-[data-testid="stSidebar"] .stMultiSelect [data-baseweb="tag"] {
-    background-color: #2563EB !important;
+[data-testid="stSidebar"] h3 { color: #F8FAFC !important; font-weight: 700 !important; }
+[data-testid="stSidebar"] hr {
+    border: none !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    margin: 10px 0 !important;
 }
-[data-testid="stSidebar"] hr { border-color: #2D4A6B !important; }
+[data-testid="stSidebar"] .stMultiSelect [data-baseweb="tag"] {
+    background-color: #1D4ED8 !important;
+    border-radius: 6px !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] > div {
+    background-color: rgba(255,255,255,0.07) !important;
+    border-color: rgba(255,255,255,0.15) !important;
+    border-radius: 8px !important;
+}
+[data-testid="stSidebar"] label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.7px !important;
+    color: #94A3B8 !important;
+}
 
 /* ── KPI cards ── */
 .kpi-box {
-    background: white;
-    border-radius: 14px;
-    padding: 16px 14px 12px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px 14px 13px;
     text-align: center;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 1px 3px rgba(15,23,42,0.06), 0 8px 24px rgba(15,23,42,0.04);
+    transition: box-shadow .2s;
 }
-.kpi-value { font-size: 28px; font-weight: 800; margin: 0; line-height: 1; font-family: Inter, sans-serif; }
-.kpi-label { font-size: 10px; color: #6B7280; margin-top: 5px;
-             text-transform: uppercase; letter-spacing: 0.7px; font-weight: 600; }
-.kpi-sub   { font-size: 11px; color: #9CA3AF; margin-top: 2px; }
+.kpi-box:hover { box-shadow: 0 4px 12px rgba(15,23,42,0.1), 0 12px 32px rgba(15,23,42,0.06); }
+.kpi-value {
+    font-size: 30px; font-weight: 800; margin: 0; line-height: 1;
+    font-family: 'Inter', sans-serif; letter-spacing: -0.5px;
+}
+.kpi-label {
+    font-size: 10px; color: #6B7280; margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+}
+.kpi-sub { font-size: 11px; color: #94A3B8; margin-top: 3px; font-weight: 500; }
 
 /* ── Encabezados de sección ── */
 .sec-title {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.9px; color: #374151;
-    margin: 8px 0 3px 0; padding-left: 9px;
-    border-left: 3px solid #2563EB;
+    display: inline-block;
+    font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #1E3A5F;
+    margin: 10px 0 3px 0; padding: 3px 10px 3px 10px;
+    border-left: 3px solid #1D4ED8;
+    background: rgba(29,78,216,0.05);
+    border-radius: 0 6px 6px 0;
 }
 
-/* ── Contenedor blanco para gráficos ── */
-.card {
-    background: white; border-radius: 14px;
-    padding: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    margin-bottom: 4px;
+/* ── Tarjeta de gráfico ── */
+.chart-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.06), 0 4px 16px rgba(15,23,42,0.04);
+    overflow: hidden;
+    margin-bottom: 2px;
 }
+
+/* ── Tabla ── */
+[data-testid="stDataFrame"] { border-radius: 10px; overflow: hidden; }
 </style>
 """, unsafe_allow_html=True)
 
-# ──────────────────────────────────────────────────────────────
-# CARGA DE DATOS
-# ──────────────────────────────────────────────────────────────
-CSV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset_ettalent_clean.csv")
+# ──────────────────────────────────────────────────────────────────────────────
+# PALETAS
+# ──────────────────────────────────────────────────────────────────────────────
+# 7 azules institucionales para universidades (fijos y distinguibles)
+UNI_COLORS = {
+    "UNIVERSIDAD 1": "#1D4ED8",
+    "UNIVERSIDAD 2": "#2563EB",
+    "UNIVERSIDAD 3": "#3B82F6",
+    "UNIVERSIDAD 4": "#0EA5E9",
+    "UNIVERSIDAD 5": "#0284C7",
+    "UNIVERSIDAD 6": "#0369A1",
+    "UNIVERSIDAD 7": "#075985",
+}
+UNI_FALLBACK = "#6B7280"
 
-NUMERIC_COLS = [
-    "PUNTAJE MÁXIMO",
-    "AUTOEVALUACIÓN (FORMS)",
-    "% AUTOEVALUACIÓN (FORMS)",
-    "% AUTOEVALUACIÓN TOTAL",
-    "VERIFICACIÓN (ESPOCH)",
-    "%EVALUACIÓN",
-    "PROMEDIO",
-    "%PROMEDIO TOTAL DIMENSIÓN",
-]
+FONT  = dict(family="Inter, system-ui, sans-serif", size=11, color="#1E293B")
+BG    = dict(paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF")
+GRID  = "#F1F5F9"
+
+PCFG  = {"displayModeBar": False}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# CARGA DE DATOS
+# ──────────────────────────────────────────────────────────────────────────────
+CSV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset_ettalent_clean.csv")
 
 @st.cache_data
 def load_data(path: str) -> pd.DataFrame:
     df = pd.read_csv(path)
-    for col in NUMERIC_COLS:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce")
-    df.dropna(subset=["IES ANONIMIZADA", "%PROMEDIO TOTAL DIMENSIÓN"], inplace=True)
+    df["RESULTADO"] = pd.to_numeric(df["RESULTADO"], errors="coerce")
+    df.dropna(subset=["IES ANONIMIZADA", "RESULTADO"], inplace=True)
     return df
 
 df_raw = load_data(CSV_PATH)
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # SIDEBAR — FILTROS
-# Estructura lista para recibir nuevas dimensiones en el futuro
-# ──────────────────────────────────────────────────────────────
+# Estructura lista para todas las dimensiones; por ahora solo Transparencia
+# ──────────────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## 🎓 ETalent")
     st.markdown("**Evaluación de Transparencia Institucional**")
     st.markdown("---")
+
     st.markdown("### Filtros")
 
     dim_macro_opts = sorted(df_raw["DIMENSION_MACRO"].unique())
     uni_opts       = sorted(df_raw["IES ANONIMIZADA"].unique())
-    subdim_opts    = sorted(df_raw["DIMENSIÓN"].unique())
+    subdim_opts    = sorted(df_raw["SUBDIMENSIÓN"].unique())
 
-    # Filtro 1: Dimensión macro — relevante cuando haya más hojas
-    sel_macro  = st.multiselect(
+    sel_macro = st.multiselect(
         "Dimensión",
         dim_macro_opts,
         default=dim_macro_opts,
-        help="Selecciona las dimensiones de evaluación a visualizar.",
+        help="Dimensiones de evaluación disponibles.",
     )
-
-    # Filtro 2: Universidad
     sel_uni = st.multiselect(
         "Universidad",
         uni_opts,
         default=uni_opts,
-        help="Filtra por universidad anonimizada.",
+        help="Universidades anonimizadas.",
     )
-
-    # Filtro 3: Sub-dimensión
     sel_subdim = st.multiselect(
         "Sub-Dimensión",
         subdim_opts,
         default=subdim_opts,
-        help="Filtra por sub-dimensión de transparencia.",
+        help="Sub-dimensiones de la hoja activa.",
     )
 
     st.markdown("---")
-    st.markdown(f"**Dimensiones activas:** {len(sel_macro)}")
-    st.markdown(f"**Universidades:** {len(sel_uni)}")
-    st.markdown(f"**Sub-dimensiones:** {len(sel_subdim)}")
+
+    # Contadores de estado del filtro
+    n_dim   = len(sel_macro)
+    n_uni   = len(sel_uni)
+    n_sub   = len(sel_subdim)
+    total_d = len(dim_macro_opts)
+    total_u = len(uni_opts)
+    total_s = len(subdim_opts)
+
+    estado = "GENERAL" if (n_dim == total_d and n_uni == total_u and n_sub == total_s) else "PERSONALIZADO"
+    color_estado = "#10B981" if estado == "GENERAL" else "#F59E0B"
+
+    st.markdown(
+        f'<div style="font-size:10px;font-weight:700;letter-spacing:1px;'
+        f'color:{color_estado};margin-bottom:8px;">{estado}</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f'<div style="font-size:11px;color:#64748B;line-height:1.7;">'
+        f'Dimensiones: <b style="color:#CBD5E1">{n_dim}/{total_d}</b><br>'
+        f'Universidades: <b style="color:#CBD5E1">{n_uni}/{total_u}</b><br>'
+        f'Sub-Dimensiones: <b style="color:#CBD5E1">{n_sub}/{total_s}</b>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
     st.markdown("---")
     st.markdown(
-        "<div style='font-size:10px; color:#64748B;'>"
-        "ETalent · ESPOCH · 2026<br>"
-        "Jefferson Jordan"
-        "</div>",
+        '<div style="font-size:10px;color:#475569;line-height:1.6;">'
+        'ETalent · ESPOCH · 2026<br>Jefferson Jordan</div>',
         unsafe_allow_html=True,
     )
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # APLICAR FILTROS
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 df = df_raw[
     df_raw["DIMENSION_MACRO"].isin(sel_macro) &
     df_raw["IES ANONIMIZADA"].isin(sel_uni) &
-    df_raw["DIMENSIÓN"].isin(sel_subdim)
+    df_raw["SUBDIMENSIÓN"].isin(sel_subdim)
 ].copy()
 
-# Guardia: si el filtro dejó vacío el df, mostrar aviso y detener
 if df.empty:
-    st.warning("No hay datos con los filtros seleccionados. Ajusta los filtros en la barra lateral.")
+    st.warning("⚠️ No hay datos con los filtros seleccionados. Ajusta los filtros en la barra lateral.")
     st.stop()
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # HEADER
-# ──────────────────────────────────────────────────────────────
-n_dims = df["DIMENSION_MACRO"].nunique()
+# ──────────────────────────────────────────────────────────────────────────────
 n_unis = df["IES ANONIMIZADA"].nunique()
+n_dims = df["DIMENSION_MACRO"].nunique()
+n_ind  = df["INDICADOR"].nunique()
+
 st.markdown(f"""
 <div style="
-    background: linear-gradient(135deg, #0F172A 0%, #1D4ED8 60%, #06B6D4 100%);
-    border-radius: 14px; padding: 18px 28px; margin-bottom: 14px; color: white;">
-  <h1 style="margin:0; font-size:21px; font-weight:800; letter-spacing:-0.3px; font-family:Inter,sans-serif;">
-      🎓 Dashboard ETalent · Transparencia Institucional
-  </h1>
-  <p style="margin:5px 0 0 0; opacity:0.75; font-size:12px;">
-      ESPOCH &nbsp;·&nbsp; {n_unis} Universidades Ecuatorianas &nbsp;·&nbsp; {n_dims} Dimensión(es) activa(s)
-  </p>
+    background: linear-gradient(135deg, #0D1B2A 0%, #1D4ED8 55%, #0EA5E9 100%);
+    border-radius: 14px; padding: 16px 28px; margin-bottom: 12px; color: white;
+    display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <div style="font-size:20px; font-weight:800; letter-spacing:-0.4px; font-family:Inter,sans-serif;">
+      Dashboard ETalent · Transparencia Institucional
+    </div>
+    <div style="margin-top:4px; opacity:0.72; font-size:12px; font-weight:500;">
+      {n_unis} Universidades · {n_dims} Dimensión(es) · {n_ind} Indicadores
+    </div>
+  </div>
+  <div style="
+    background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25);
+    border-radius:8px; padding:6px 14px; font-size:11px; font-weight:700;
+    letter-spacing:1.2px; color:white;">
+    ESPOCH
+  </div>
 </div>
 """, unsafe_allow_html=True)
 
-# ──────────────────────────────────────────────────────────────
-# PRECÁLCULOS GLOBALES
-# ──────────────────────────────────────────────────────────────
-# Un valor de %PROMEDIO TOTAL DIMENSIÓN por universidad (ya forward-filled en ETL)
-eis_kpi = (
-    df.groupby("IES ANONIMIZADA")["%PROMEDIO TOTAL DIMENSIÓN"]
-    .first()
-    .dropna()
-)
-
-prom_global = eis_kpi.mean()
+# ──────────────────────────────────────────────────────────────────────────────
+# PRECÁLCULOS
+# ──────────────────────────────────────────────────────────────────────────────
+eis_kpi     = df.groupby("IES ANONIMIZADA")["RESULTADO"].mean()
+prom_global = df["RESULTADO"].mean()
 mejor_eis   = eis_kpi.idxmax() if not eis_kpi.empty else "—"
 peor_eis    = eis_kpi.idxmin() if not eis_kpi.empty else "—"
 mejor_val   = eis_kpi.max()    if not eis_kpi.empty else 0.0
 peor_val    = eis_kpi.min()    if not eis_kpi.empty else 0.0
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # KPI CARDS — 3 tarjetas
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 k1, k2, k3 = st.columns(3, gap="large")
-
 kpis = [
-    (k1, f"{prom_global:.1f}%",  "Promedio Global",      "de cumplimiento general",         "#2563EB"),
-    (k2, mejor_eis,              "Mayor Cumplimiento",   f"{mejor_val:.1f}% promedio total", "#10B981"),
-    (k3, peor_eis,               "Menor Cumplimiento",   f"{peor_val:.1f}% promedio total",  "#EF4444"),
+    (k1, f"{prom_global:.1f}%", "Resultado Global",       "promedio general de evaluación",          "#1D4ED8"),
+    (k2, mejor_eis,             "Mayor Cumplimiento",      f"{mejor_val:.1f}% resultado promedio",    "#0EA5E9"),
+    (k3, peor_eis,              "Menor Cumplimiento",      f"{peor_val:.1f}% resultado promedio",     "#EF4444"),
 ]
-
 for col, val, label, sub, color in kpis:
     with col:
         st.markdown(f"""
-        <div class="kpi-box" style="border-top: 4px solid {color};">
-            <div class="kpi-value" style="color:{color};">{val}</div>
-            <div class="kpi-label">{label}</div>
-            <div class="kpi-sub">{sub}</div>
+        <div class="kpi-box" style="border-top:3px solid {color};">
+          <div class="kpi-value" style="color:{color};">{val}</div>
+          <div class="kpi-label">{label}</div>
+          <div class="kpi-sub">{sub}</div>
         </div>""", unsafe_allow_html=True)
 
-st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 
-# ──────────────────────────────────────────────────────────────
-# FILA 2: Ranking  +  Radar
-# ──────────────────────────────────────────────────────────────
-FONT = dict(family="Inter, system-ui, sans-serif", size=11, color="#1F2937")
-BG   = dict(paper_bgcolor="white", plot_bgcolor="white")
-
+# ──────────────────────────────────────────────────────────────────────────────
+# FILA 2 — Ranking  +  Radar
+# ──────────────────────────────────────────────────────────────────────────────
 col_l, col_r = st.columns([3, 2], gap="medium")
 
-# ── Ranking ────────────────────────────────────────────────────
 with col_l:
-    st.markdown('<div class="sec-title">Ranking de Universidades — % Promedio Total</div>',
-                unsafe_allow_html=True)
-
-    rank_df = eis_kpi.reset_index().sort_values("%PROMEDIO TOTAL DIMENSIÓN")
+    st.markdown('<div class="sec-title">Ranking de Universidades</div>', unsafe_allow_html=True)
+    rank_df = eis_kpi.reset_index().sort_values("RESULTADO")
     rank_df.columns = ["UNI", "PCT"]
     rank_df["COLOR"] = rank_df["PCT"].apply(
         lambda x: "#10B981" if x >= 70 else ("#F59E0B" if x >= 50 else "#EF4444")
     )
-
     fig_bar = go.Figure(go.Bar(
-        x=rank_df["PCT"],
-        y=rank_df["UNI"],
+        x=rank_df["PCT"], y=rank_df["UNI"],
         orientation="h",
         marker_color=rank_df["COLOR"],
+        marker_line_width=0,
         text=rank_df["PCT"].apply(lambda x: f"  {x:.1f}%"),
-        textposition="outside",
+        textposition="outside", textfont=dict(size=11, color="#374151"),
         cliponaxis=False,
     ))
     fig_bar.add_vline(
-        x=70, line_dash="dot", line_color="#10B981",
+        x=70, line_dash="dot", line_color="#10B981", line_width=1.5,
         annotation_text="Meta 70%", annotation_position="top right",
-        annotation_font_color="#10B981",
+        annotation_font=dict(color="#10B981", size=10),
     )
     fig_bar.update_layout(
-        height=265,
-        margin=dict(l=0, r=55, t=8, b=8),
-        xaxis=dict(range=[0, 115], showgrid=True, gridcolor="#F3F4F6",
+        height=262, margin=dict(l=0, r=55, t=6, b=6),
+        xaxis=dict(range=[0, 112], showgrid=True, gridcolor=GRID,
                    zeroline=False, ticksuffix="%",
-                   tickfont=dict(size=10, color="#1F2937")),
-        yaxis=dict(showgrid=False, tickfont=dict(size=11, color="#1F2937")),
-        showlegend=False,
-        font=FONT, **BG,
+                   tickfont=dict(size=10, color="#94A3B8"),
+                   showline=False),
+        yaxis=dict(showgrid=False, tickfont=dict(size=11, color="#1E293B"), showline=False),
+        showlegend=False, font=FONT, **BG,
     )
-    st.plotly_chart(fig_bar, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig_bar, use_container_width=True, config=PCFG)
 
-# ── Radar ───────────────────────────────────────────────────────
 with col_r:
-    st.markdown('<div class="sec-title">Perfil por Sub-Dimensión — % Verificación ESPOCH</div>',
-                unsafe_allow_html=True)
-
-    radar_df = df.groupby("DIMENSIÓN")["%EVALUACIÓN"].mean().reset_index()
-    cats = radar_df["DIMENSIÓN"].tolist()
-    vals = radar_df["%EVALUACIÓN"].tolist()
-    # Cerrar el polígono
-    cats_closed = cats + [cats[0]]
-    vals_closed = vals + [vals[0]]
-
+    st.markdown('<div class="sec-title">Perfil por Sub-Dimensión</div>', unsafe_allow_html=True)
+    radar_df = df.groupby("SUBDIMENSIÓN")["RESULTADO"].mean().reset_index()
+    cats = radar_df["SUBDIMENSIÓN"].tolist()
+    vals = radar_df["RESULTADO"].tolist()
     fig_radar = go.Figure(go.Scatterpolar(
-        r=vals_closed, theta=cats_closed,
+        r=vals + [vals[0]], theta=cats + [cats[0]],
         fill="toself",
-        fillcolor="rgba(37,99,235,0.12)",
-        line=dict(color="#2563EB", width=2.5),
-        marker=dict(size=7, color="#2563EB"),
-        hovertemplate="%{theta}: <b>%{r:.1f}%</b><extra></extra>",
+        fillcolor="rgba(29,78,216,0.10)",
+        line=dict(color="#1D4ED8", width=2.5),
+        marker=dict(size=7, color="#1D4ED8", line=dict(color="white", width=1.5)),
+        hovertemplate="<b>%{theta}</b><br>%{r:.1f}%<extra></extra>",
     ))
     fig_radar.update_layout(
         polar=dict(
@@ -292,181 +338,154 @@ with col_r:
             radialaxis=dict(
                 visible=True, range=[0, 100],
                 tickformat=".0f", ticksuffix="%",
-                tickfont=dict(size=9), gridcolor="#E5E7EB",
+                tickfont=dict(size=9, color="#94A3B8"),
+                gridcolor=GRID, linecolor=GRID,
             ),
             angularaxis=dict(
                 tickfont=dict(size=10, color="#374151"),
-                gridcolor="#E5E7EB",
+                gridcolor=GRID, linecolor=GRID,
             ),
         ),
-        height=265,
-        margin=dict(l=40, r=40, t=20, b=20),
-        paper_bgcolor="white",
-        showlegend=False,
-        font=FONT,
+        height=262, margin=dict(l=35, r=35, t=18, b=18),
+        paper_bgcolor="white", showlegend=False, font=FONT,
     )
-    st.plotly_chart(fig_radar, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig_radar, use_container_width=True, config=PCFG)
 
-# ──────────────────────────────────────────────────────────────
-# FILA 3: Heatmap  (universidades × sub-dimensiones)
-# ──────────────────────────────────────────────────────────────
-st.markdown('<div class="sec-title">Mapa de Calor — % Verificación ESPOCH por Universidad y Sub-Dimensión</div>',
+# ──────────────────────────────────────────────────────────────────────────────
+# FILA 3 — Heatmap
+# ──────────────────────────────────────────────────────────────────────────────
+st.markdown('<div class="sec-title">Mapa de Calor — Resultado por Universidad y Sub-Dimensión</div>',
             unsafe_allow_html=True)
 
-heat_pivot = (
-    df.pivot_table(
-        index="IES ANONIMIZADA",
-        columns="DIMENSIÓN",
-        values="%EVALUACIÓN",
-        aggfunc="mean",
-    )
+heat_pivot = df.pivot_table(
+    index="IES ANONIMIZADA", columns="SUBDIMENSIÓN",
+    values="RESULTADO", aggfunc="mean",
 )
-# Ordenar universidades por promedio descendente
 heat_pivot = heat_pivot.loc[heat_pivot.mean(axis=1).sort_values(ascending=False).index]
 
-z_vals  = np.round(heat_pivot.values.astype(float), 1)
-text_vals = np.where(np.isnan(z_vals), "N/D", z_vals.astype(str) + "%")
+z = np.round(heat_pivot.values.astype(float), 1)
+txt = np.where(np.isnan(z), "N/D", z.astype(str) + "%")
 
 fig_heat = go.Figure(go.Heatmap(
-    z=z_vals,
-    x=heat_pivot.columns.tolist(),
-    y=heat_pivot.index.tolist(),
+    z=z, x=heat_pivot.columns.tolist(), y=heat_pivot.index.tolist(),
     colorscale=[
-        [0.00, "#FEE2E2"], [0.33, "#EF4444"],
-        [0.34, "#FEF3C7"], [0.66, "#10B981"],
-        [1.00, "#064E3B"],
+        [0.00, "#FEE2E2"], [0.30, "#FCA5A5"],
+        [0.50, "#FEF3C7"], [0.70, "#6EE7B7"],
+        [1.00, "#065F46"],
     ],
     zmin=0, zmax=100,
-    text=text_vals,
-    texttemplate="<b>%{text}</b>",
-    textfont=dict(size=10),
-    colorbar=dict(
-        title=dict(text="% Verif.", side="right"),
-        ticksuffix="%", thickness=12, len=0.85,
-    ),
+    text=txt, texttemplate="<b>%{text}</b>", textfont=dict(size=10),
+    colorbar=dict(title=dict(text="%", side="right"),
+                  ticksuffix="%", thickness=12, len=0.85,
+                  tickfont=dict(size=9, color="#64748B")),
     hoverongaps=False,
+    hovertemplate="<b>%{y}</b><br>%{x}<br><b>%{z:.1f}%</b><extra></extra>",
 ))
-n_eis = len(heat_pivot)
 fig_heat.update_layout(
-    height=max(240, n_eis * 36),
-    margin=dict(l=0, r=0, t=30, b=10),
-    xaxis=dict(side="top", tickfont=dict(size=11, color="#1F2937")),
-    yaxis=dict(tickfont=dict(size=10, color="#374151"), autorange="reversed"),
+    height=max(220, len(heat_pivot) * 38),
+    margin=dict(l=0, r=0, t=28, b=8),
+    xaxis=dict(side="top", tickfont=dict(size=11, color="#1E293B"),
+               showline=False, showgrid=False),
+    yaxis=dict(tickfont=dict(size=10, color="#374151"),
+               autorange="reversed", showline=False, showgrid=False),
     font=FONT, **BG,
 )
-st.plotly_chart(fig_heat, use_container_width=True, config={"displayModeBar": False})
+st.plotly_chart(fig_heat, use_container_width=True, config=PCFG)
 
-# ──────────────────────────────────────────────────────────────
-# FILA 4: Autoevaluación vs Verificación — ancho completo
-# ──────────────────────────────────────────────────────────────
-st.markdown('<div class="sec-title">Autoevaluación vs Verificación ESPOCH — Promedio por Universidad</div>',
-            unsafe_allow_html=True)
+# ──────────────────────────────────────────────────────────────────────────────
+# FILA 4 — Evaluación por Dimensión (ancho completo)
+# Este gráfico crece a medida que Ing. Bernarda entrega más dimensiones
+# ──────────────────────────────────────────────────────────────────────────────
+st.markdown('<div class="sec-title">Evaluación por Dimensión</div>', unsafe_allow_html=True)
 
-# Un valor por universidad (forward-filled en ETL → .first() es suficiente)
-compare_df = (
-    df.groupby("IES ANONIMIZADA")
-    .agg(
-        autoevaluacion=("% AUTOEVALUACIÓN TOTAL", "first"),
-        verificacion  =("PROMEDIO",               "first"),
-    )
+dim_eis = (
+    df.groupby(["DIMENSION_MACRO", "IES ANONIMIZADA"])["RESULTADO"]
+    .mean()
     .reset_index()
-    .sort_values("verificacion", ascending=False)
+    .sort_values("IES ANONIMIZADA")
 )
 
-fig_grp = go.Figure()
-fig_grp.add_trace(go.Bar(
-    name="Autoevaluación (Forms)",
-    x=compare_df["IES ANONIMIZADA"],
-    y=compare_df["autoevaluacion"],
-    marker_color="#2563EB",
-    text=compare_df["autoevaluacion"].apply(lambda x: f"{x:.1f}%"),
-    textposition="outside",
-    cliponaxis=False,
-))
-fig_grp.add_trace(go.Bar(
-    name="Verificación ESPOCH",
-    x=compare_df["IES ANONIMIZADA"],
-    y=compare_df["verificacion"],
-    marker_color="#10B981",
-    text=compare_df["verificacion"].apply(lambda x: f"{x:.1f}%"),
-    textposition="outside",
-    cliponaxis=False,
-))
-fig_grp.update_layout(
+fig_dim = go.Figure()
+for uni in sorted(dim_eis["IES ANONIMIZADA"].unique()):
+    sub = dim_eis[dim_eis["IES ANONIMIZADA"] == uni]
+    fig_dim.add_trace(go.Bar(
+        name=uni,
+        x=sub["DIMENSION_MACRO"],
+        y=sub["RESULTADO"],
+        marker_color=UNI_COLORS.get(uni, UNI_FALLBACK),
+        marker_line_width=0,
+        text=sub["RESULTADO"].apply(lambda x: f"{x:.0f}%"),
+        textposition="outside", textfont=dict(size=9, color="#374151"),
+        cliponaxis=False,
+        hovertemplate=f"<b>{uni}</b><br>%{{x}}<br><b>%{{y:.1f}}%</b><extra></extra>",
+    ))
+fig_dim.update_layout(
     barmode="group",
-    height=260,
-    margin=dict(l=0, r=10, t=10, b=10),
-    yaxis=dict(range=[0, 118], ticksuffix="%", gridcolor="#F3F4F6",
-               zeroline=False, tickfont=dict(size=10, color="#1F2937")),
-    xaxis=dict(tickfont=dict(size=11, color="#1F2937")),
+    height=258,
+    margin=dict(l=0, r=10, t=6, b=6),
+    yaxis=dict(range=[0, 115], ticksuffix="%", gridcolor=GRID,
+               zeroline=False, tickfont=dict(size=10, color="#94A3B8"), showline=False),
+    xaxis=dict(tickfont=dict(size=12, color="#1E293B"), showline=False, showgrid=False),
     legend=dict(
         orientation="h", yanchor="bottom", y=1.02,
         xanchor="right", x=1,
-        font=dict(size=11, color="#1F2937"),
+        font=dict(size=10, color="#374151"),
+        bgcolor="rgba(0,0,0,0)",
     ),
     font=FONT, **BG,
 )
-st.plotly_chart(fig_grp, use_container_width=True, config={"displayModeBar": False})
+st.plotly_chart(fig_dim, use_container_width=True, config=PCFG)
 
-# ──────────────────────────────────────────────────────────────
-# FILA 5: Tabla analítica
-# ──────────────────────────────────────────────────────────────
-st.markdown('<div class="sec-title">Resultados por Sub-Dimensión</div>',
-            unsafe_allow_html=True)
+# ──────────────────────────────────────────────────────────────────────────────
+# FILA 5 — Tabla: Resultados por Indicador
+# ──────────────────────────────────────────────────────────────────────────────
+st.markdown('<div class="sec-title">Resultados por Indicador</div>', unsafe_allow_html=True)
 
 tc1, tc2 = st.columns([3, 1])
 with tc1:
     st.markdown(
-        '<p style="color:#1F2937;font-weight:600;font-size:12px;margin-bottom:3px;">Ordenar por</p>',
+        '<p style="color:#374151;font-weight:600;font-size:12px;margin-bottom:3px;">Ordenar por</p>',
         unsafe_allow_html=True,
     )
     orden = st.selectbox(
         "_orden",
-        ["% Promedio Total (↓)", "Universidad", "Sub-Dimensión", "% Verificación (↓)"],
-        index=0,
-        label_visibility="collapsed",
+        ["Resultado (↓)", "Universidad", "Sub-Dimensión", "Indicador"],
+        index=0, label_visibility="collapsed",
     )
 with tc2:
     st.markdown(
-        '<p style="color:#1F2937;font-weight:600;font-size:12px;margin-bottom:3px;">Dimensión</p>',
+        '<p style="color:#374151;font-weight:600;font-size:12px;margin-bottom:3px;">Dimensión</p>',
         unsafe_allow_html=True,
     )
-    # Mini-filtro de dimensión macro para la tabla (útil cuando haya varias)
     macro_tabla = st.selectbox(
-        "_macro_tabla",
+        "_macro",
         ["Todas"] + sorted(df["DIMENSION_MACRO"].unique().tolist()),
-        index=0,
-        label_visibility="collapsed",
+        index=0, label_visibility="collapsed",
     )
 
-# Construir tabla
 tabla_df = df.copy()
 if macro_tabla != "Todas":
     tabla_df = tabla_df[tabla_df["DIMENSION_MACRO"] == macro_tabla]
 
 tabla_display = pd.DataFrame({
-    "Universidad":     tabla_df["IES ANONIMIZADA"],
-    "Dimensión":       tabla_df["DIMENSION_MACRO"],
-    "Sub-Dimensión":   tabla_df["DIMENSIÓN"],
-    "% Autoevaluación": tabla_df["% AUTOEVALUACIÓN (FORMS)"].round(1).astype(str) + "%",
-    "% Verificación":  tabla_df["%EVALUACIÓN"].round(1).astype(str) + "%",
-    "% Promedio Total": tabla_df["%PROMEDIO TOTAL DIMENSIÓN"].round(1).astype(str) + "%",
+    "Universidad":   tabla_df["IES ANONIMIZADA"],
+    "Dimensión":     tabla_df["DIMENSION_MACRO"],
+    "Sub-Dimensión": tabla_df["SUBDIMENSIÓN"],
+    "Variable":      tabla_df["VARIABLE"],
+    "Indicador":     tabla_df["INDICADOR"],
+    "Resultado":     tabla_df["RESULTADO"].round(1).astype(str) + "%",
 })
 
-# Aplicar orden
 if orden == "Universidad":
-    tabla_display = tabla_display.sort_values(["Universidad", "Sub-Dimensión"])
+    tabla_display = tabla_display.sort_values(["Universidad", "Sub-Dimensión", "Indicador"])
 elif orden == "Sub-Dimensión":
     tabla_display = tabla_display.sort_values(["Sub-Dimensión", "Universidad"])
-elif orden == "% Verificación (↓)":
+elif orden == "Indicador":
+    tabla_display = tabla_display.sort_values(["Indicador", "Universidad"])
+else:
     tabla_display = tabla_display.sort_values(
-        "% Verificación", ascending=False,
-        key=lambda s: s.str.replace("%", "").astype(float),
-    )
-else:  # % Promedio Total (↓)
-    tabla_display = tabla_display.sort_values(
-        "% Promedio Total", ascending=False,
-        key=lambda s: s.str.replace("%", "").astype(float),
+        "Resultado", ascending=False,
+        key=lambda s: pd.to_numeric(s.str.replace("%", ""), errors="coerce"),
     )
 
 st.dataframe(
@@ -475,24 +494,29 @@ st.dataframe(
     height=240,
     hide_index=True,
     column_config={
-        "Universidad":      st.column_config.TextColumn("Universidad",    width="medium"),
-        "Dimensión":        st.column_config.TextColumn("Dimensión",      width="small"),
-        "Sub-Dimensión":    st.column_config.TextColumn("Sub-Dimensión",  width="medium"),
-        "% Autoevaluación": st.column_config.TextColumn("% Autoevaluación", width="small"),
-        "% Verificación":   st.column_config.TextColumn("% Verificación",   width="small"),
-        "% Promedio Total": st.column_config.TextColumn("% Promedio Total", width="small"),
+        "Universidad":   st.column_config.TextColumn("Universidad",    width="medium"),
+        "Dimensión":     st.column_config.TextColumn("Dimensión",      width="small"),
+        "Sub-Dimensión": st.column_config.TextColumn("Sub-Dimensión",  width="medium"),
+        "Variable":      st.column_config.TextColumn("Variable",       width="large"),
+        "Indicador":     st.column_config.TextColumn("Indicador",      width="large"),
+        "Resultado":     st.column_config.TextColumn("Resultado",      width="small"),
     },
 )
-st.caption(f"Mostrando {len(tabla_display)} registros · Fuente: {', '.join(df['DIMENSION_MACRO'].unique())}")
+st.caption(
+    f"{len(tabla_display)} registros · "
+    f"Fuente: {', '.join(df['DIMENSION_MACRO'].unique())} · "
+    f"datasetactualv2_2.xlsx"
+)
 
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 # FOOTER
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────────
 st.markdown("""
-<div style="text-align:center; padding: 14px 0 2px 0;
-            color:#9CA3AF; font-size:11px;
-            border-top: 1px solid #E5E7EB; margin-top:12px;">
+<div style="
+    text-align:center; padding: 12px 0 2px 0; margin-top:10px;
+    border-top: 1px solid #E2E8F0;
+    color:#94A3B8; font-size:10.5px; font-family:Inter,sans-serif; font-weight:500;">
     Dashboard ETalent &nbsp;·&nbsp; ESPOCH &nbsp;·&nbsp;
-    Prácticas Laborales &nbsp;·&nbsp; Jefferson Jordan 2026
+    Prácticas Laborales &nbsp;·&nbsp; Jefferson Jordan &nbsp;·&nbsp; 2026
 </div>
 """, unsafe_allow_html=True)
