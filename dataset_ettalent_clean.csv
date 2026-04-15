@@ -1,29 +1,141 @@
-﻿DIMENSION_MACRO,IES,IES ANONIMIZADA,DIMENSIÓN,PUNTAJE MÁXIMO,AUTOEVALUACIÓN (FORMS),% AUTOEVALUACIÓN (FORMS),% AUTOEVALUACIÓN TOTAL,VERIFICACIÓN (ESPOCH),%EVALUACIÓN,PROMEDIO,%PROMEDIO TOTAL DIMENSIÓN
-Transparencia,ESPOL,UNIVERSIDAD 1,T. ACTIVA,10,10.0,100.0,70.46000000000001,9.5,95.0,59.41,64.94
-Transparencia,ESPOL,UNIVERSIDAD 1,T.PASIVA,19,16.5,86.84,70.46000000000001,10.0,52.63,59.41,64.94
-Transparencia,ESPOL,UNIVERSIDAD 1,T.FOCALIZADA,15,9.0,60.0,70.46000000000001,7.5,50.0,59.41,64.94
-Transparencia,ESPOL,UNIVERSIDAD 1,T. COLABORATIVA,20,7.0,35.0,70.46000000000001,8.0,40.0,59.41,64.94
-Transparencia,UNL,UNIVERSIDAD 2,T. ACTIVA,10,10.0,100.0,70.35,9.5,95.0,47.75,59.05
-Transparencia,UNL,UNIVERSIDAD 2,T.PASIVA,19,18.0,94.74,70.35,7.0,36.84,47.75,59.05
-Transparencia,UNL,UNIVERSIDAD 2,T.FOCALIZADA,15,11.5,76.67,70.35,5.5,36.67,47.75,59.05
-Transparencia,UNL,UNIVERSIDAD 2,T. COLABORATIVA,20,2.0,10.0,70.35,4.5,22.5,47.75,59.05
-Transparencia,EPN,UNIVERSIDAD 3,T. ACTIVA,10,10.0,100.0,79.94,9.5,95.0,51.74,65.84
-Transparencia,EPN,UNIVERSIDAD 3,T.PASIVA,19,18.0,94.74,79.94,7.5,39.47,51.74,65.84
-Transparencia,EPN,UNIVERSIDAD 3,T.FOCALIZADA,15,9.0,60.0,79.94,6.0,40.0,51.74,65.84
-Transparencia,EPN,UNIVERSIDAD 3,T. COLABORATIVA,20,13.0,65.0,79.94,6.5,32.5,51.74,65.84
-Transparencia,UTEQ,UNIVERSIDAD 4,T. ACTIVA,10,9.5,95.0,73.56,8.0,80.0,49.24,61.4
-Transparencia,UTEQ,UNIVERSIDAD 4,T.PASIVA,19,13.0,68.42,73.56,7.5,39.47,49.24,61.4
-Transparencia,UTEQ,UNIVERSIDAD 4,T.FOCALIZADA,15,8.0,53.33,73.56,6.0,40.0,49.24,61.4
-Transparencia,UTEQ,UNIVERSIDAD 4,T. COLABORATIVA,20,15.5,77.5,73.56,7.5,37.5,49.24,61.4
-Transparencia,ESPOCH,UNIVERSIDAD 5,T. ACTIVA,10,9.5,95.0,77.52,8.0,80.0,73.5,75.51
-Transparencia,ESPOCH,UNIVERSIDAD 5,T.PASIVA,19,13.0,68.42,77.52,12.0,63.16,73.5,75.51
-Transparencia,ESPOCH,UNIVERSIDAD 5,T.FOCALIZADA,15,10.0,66.67,77.52,11.0,73.33,73.5,75.51
-Transparencia,ESPOCH,UNIVERSIDAD 5,T. COLABORATIVA,20,16.0,80.0,77.52,15.5,77.5,73.5,75.51
-Transparencia,UNEMI,UNIVERSIDAD 6,T. ACTIVA,10,7.5,75.0,43.09,8.0,80.0,49.24,46.17
-Transparencia,UNEMI,UNIVERSIDAD 6,T.PASIVA,19,9.0,47.37,43.09,7.5,39.47,49.24,46.17
-Transparencia,UNEMI,UNIVERSIDAD 6,T.FOCALIZADA,15,4.5,30.0,43.09,6.0,40.0,49.24,46.17
-Transparencia,UNEMI,UNIVERSIDAD 6,T. COLABORATIVA,20,4.0,20.0,43.09,7.5,37.5,49.24,46.17
-Transparencia,ESPE,UNIVERSIDAD 7,T. ACTIVA,10,10.0,100.0,87.4,9.0,90.0,55.42,71.41
-Transparencia,ESPE,UNIVERSIDAD 7,T.PASIVA,19,17.5,92.11,87.4,9.5,50.0,55.42,71.41
-Transparencia,ESPE,UNIVERSIDAD 7,T.FOCALIZADA,15,10.5,70.0,87.4,7.0,46.67,55.42,71.41
-Transparencia,ESPE,UNIVERSIDAD 7,T. COLABORATIVA,20,17.5,87.5,87.4,7.0,35.0,55.42,71.41
+﻿DIMENSION_MACRO,IES ANONIMIZADA,SUBDIMENSIÓN,VARIABLE,INDICADOR,RESULTADO
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA ACTIVA,Accesibilidad del portalde transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,87.5
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,100.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",100.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,100.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,18.75
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",100.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",0.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,6.25
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,62.5
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",58.33
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,33.33
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",35.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",93.75
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",66.67
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",68.75
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,41.67
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,83.33
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,75.0
+Transparencia,UNIVERSIDAD 1,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,87.5
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,87.5
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,100.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",100.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,100.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,6.25
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",31.25
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",6.25
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,18.75
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,18.75
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",58.33
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",45.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",75.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",75.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",62.5
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,41.67
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,75.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,75.0
+Transparencia,UNIVERSIDAD 2,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,62.5
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,100.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,100.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",87.5
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,100.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,43.75
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",81.25
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",18.75
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,43.75
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,56.25
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",50.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",45.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",56.25
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",75.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",50.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,58.33
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,75.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,75.0
+Transparencia,UNIVERSIDAD 3,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,75.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,62.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,100.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",87.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,87.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,62.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",81.25
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",31.25
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,56.25
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,56.25
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",75.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",35.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",37.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",75.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",62.5
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,8.33
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,50.0
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,56.25
+Transparencia,UNIVERSIDAD 4,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,75.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,87.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,87.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,87.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",87.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,87.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,50.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",75.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",43.75
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,62.5
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,56.25
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",58.33
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",35.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",75.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",41.67
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",25.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,25.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,83.33
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,75.0
+Transparencia,UNIVERSIDAD 5,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,87.5
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,0.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,75.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",62.5
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,75.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,6.25
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",50.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",18.75
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,0.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,18.75
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",41.67
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",25.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",6.25
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",50.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",0.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,16.67
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,50.0
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,56.25
+Transparencia,UNIVERSIDAD 6,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,50.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA ACTIVA,Accesibilidad del portal de transparencia,Existencia del portal,100.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA ACTIVA,Actualización de la información,Información actualizada en base a normativa,87.5
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA ACTIVA,Completitud de la información,Ítems publicados son los exigidos por normativa,100.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA ACTIVA,Publicación de información financiera y presupuestaria,"Publicación de información financiera y presupuestaria, calidad y claridad de datos financieros",87.5
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA ACTIVA,Usabilidad del portal,Publicación de información en formato de datos abiertos,100.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA COLABORATIVA,Datos abiertos co-creados,La institución presenta datasets o informes generados junto con actores externos,50.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA COLABORATIVA,Mecanismos de colaboración,"Existen espacios participativos en temas de transparencia (foros, laboratorios, hackathons)",81.25
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA COLABORATIVA,Nivel de interacción,"Existen plataformas colaborativas institucionales que evidencien (visitas, aportes)",37.5
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA COLABORATIVA,Participación ciudadana en el diseño de información,Existencia de proyectos de transparencia co-creados con la comunidad,62.5
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA COLABORATIVA,Retroalimentación pública,Existencia de canales de comentarios o sugerencias,75.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA FOCALIZADA,Accesibilidad diferenciada,"Disponibilidad de versiones inclusivas (lectura fácil, braille, multimedia)",75.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA FOCALIZADA,Claridad y lenguaje ciudadano,Nivel de comprensión de la información publicada,50.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA FOCALIZADA,Identificación de públicos objetivo,"Existencia de mapeo de grupos de interés (estudiantes, docentes, ciudadanía)",35.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA FOCALIZADA,Información sectorial priorizada,"Existe información, publicaciones de temas específicos con información dirigida (p. ej. becas, presupuestos, investigaciones)",81.25
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Mecanismos de acceso,"Existen varios canales disponibles de acceso a la información (presencial, web, correo, etc.)",75.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Procedimiento institucional,"Existencia de reglamento, protocolo, formato de solicitudes",87.5
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Publicación de solicitudes frecuentes (FAǪ),Existencia de repositorio público de solicitudes recurrentes,33.33
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Respuestas completas,Las respuestas se completan satisfactoriamente por parte de la institución,75.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Satisfacción del solicitante,Los usuarios están satisfechos con el servicio,75.0
+Transparencia,UNIVERSIDAD 7,TRANSPARENCIA PASIVA,Tiempos de respuesta,Plazos predefinidos para respuesta a solicitudes de información,75.0
