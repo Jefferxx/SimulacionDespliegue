@@ -73,21 +73,39 @@ div[data-testid="column"]:last-child button[kind="secondary"]:hover {
 .kpi-box {
     background: #FFFFFF;
     border-radius: 12px;
-    padding: 16px 14px 13px;
-    text-align: center;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0;
     box-shadow: 0 1px 3px rgba(15,23,42,0.06), 0 8px 24px rgba(15,23,42,0.04);
     transition: box-shadow .2s;
 }
 .kpi-box:hover { box-shadow: 0 4px 12px rgba(15,23,42,0.1), 0 12px 32px rgba(15,23,42,0.06); }
+.kpi-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding-right: 16px;
+}
+.kpi-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+    border-left: 1px solid #E2E8F0;
+}
 .kpi-value {
-    font-size: 30px; font-weight: 800; margin: 0; line-height: 1;
+    font-size: 28px; font-weight: 800; margin: 0; line-height: 1;
     font-family: 'Inter', sans-serif; letter-spacing: -0.5px;
 }
-.kpi-label {
-    font-size: 10px; color: #6B7280; margin-top: 6px;
-    text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+.kpi-title {
+    font-size: 13px; font-weight: 700; color: #1E293B;
+    letter-spacing: -0.1px; line-height: 1.2; margin: 0;
 }
-.kpi-sub { font-size: 11px; color: #94A3B8; margin-top: 3px; font-weight: 500; }
+.kpi-sub { font-size: 10px; color: #94A3B8; margin-top: 4px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.6px; }
 
 /* ── Encabezados de sección ── */
 .sec-title {
@@ -264,17 +282,21 @@ peor_val    = eis_kpi.min()    if not eis_kpi.empty else 0.0
 # ──────────────────────────────────────────────────────────────────────────────
 k1, k2, k3 = st.columns(3, gap="large")
 kpis = [
-    (k1, f"{prom_global:.1f}%", "Resultado Global",       "promedio general de evaluación",          "#1D4ED8"),
-    (k2, mejor_eis,             "Mayor Cumplimiento",      f"{mejor_val:.1f}% resultado promedio",    "#0EA5E9"),
-    (k3, peor_eis,              "Menor Cumplimiento",      f"{peor_val:.1f}% resultado promedio",     "#0369A1"),
+    (k1, f"{prom_global:.1f}%", "Resultado Global",  "promedio general de evaluación", "#1D4ED8"),
+    (k2, f"{mejor_val:.1f}%",   mejor_eis,           "Mayor Cumplimiento",             "#0EA5E9"),
+    (k3, f"{peor_val:.1f}%",    peor_eis,            "Menor Cumplimiento",             "#0369A1"),
 ]
-for col, val, label, sub, color in kpis:
+for col, val, title, sub, color in kpis:
     with col:
         st.markdown(f"""
-        <div class="kpi-box" style="border-top:3px solid {color};">
-          <div class="kpi-value" style="color:{color};">{val}</div>
-          <div class="kpi-label">{label}</div>
-          <div class="kpi-sub">{sub}</div>
+        <div class="kpi-box" style="border-left:3px solid {color};">
+          <div class="kpi-left">
+            <span class="kpi-value" style="color:{color};">{val}</span>
+          </div>
+          <div class="kpi-right">
+            <div class="kpi-title">{title}</div>
+            <div class="kpi-sub">{sub}</div>
+          </div>
         </div>""", unsafe_allow_html=True)
 
 st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
