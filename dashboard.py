@@ -111,6 +111,16 @@ div[data-testid="column"]:last-child button[kind="secondary"]:hover {
 
 /* ── Tabla ── */
 [data-testid="stDataFrame"] { border-radius: 10px; overflow: hidden; }
+[data-testid="stDataFrame"] thead tr th {
+    background-color: #1D4ED8 !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.4px !important;
+}
+[data-testid="stDataFrame"] tbody tr:nth-child(even) td {
+    background-color: #F0F7FF !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -462,7 +472,7 @@ tabla_display = pd.DataFrame({
     "Sub-Dimensión": tabla_df["SUBDIMENSIÓN"],
     "Variable":      tabla_df["VARIABLE"],
     "Indicador":     tabla_df["INDICADOR"],
-    "Resultado":     tabla_df["RESULTADO"].round(1).astype(str) + "%",
+    "Resultado":     tabla_df["RESULTADO"].round(1),
 })
 
 if orden == "Universidad":
@@ -472,10 +482,7 @@ elif orden == "Sub-Dimensión":
 elif orden == "Indicador":
     tabla_display = tabla_display.sort_values(["Indicador", "Universidad"])
 else:
-    tabla_display = tabla_display.sort_values(
-        "Resultado", ascending=False,
-        key=lambda s: pd.to_numeric(s.str.replace("%", ""), errors="coerce"),
-    )
+    tabla_display = tabla_display.sort_values("Resultado", ascending=False)
 
 st.dataframe(
     tabla_display,
@@ -488,7 +495,9 @@ st.dataframe(
         "Sub-Dimensión": st.column_config.TextColumn("Sub-Dimensión",  width="medium"),
         "Variable":      st.column_config.TextColumn("Variable",       width="large"),
         "Indicador":     st.column_config.TextColumn("Indicador",      width="large"),
-        "Resultado":     st.column_config.TextColumn("Resultado",      width="small"),
+        "Resultado":     st.column_config.ProgressColumn(
+            "Resultado", format="%.1f%%", min_value=0, max_value=100, width="small"
+        ),
     },
 )
 st.caption(
