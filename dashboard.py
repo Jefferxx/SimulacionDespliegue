@@ -279,7 +279,7 @@ with col_l:
     rank_df = eis_kpi.reset_index().sort_values("RESULTADO")
     rank_df.columns = ["UNI", "PCT"]
     rank_df["COLOR"] = rank_df["PCT"].apply(
-        lambda x: "#10B981" if x >= 70 else ("#F59E0B" if x >= 50 else "#EF4444")
+        lambda x: "#1D4ED8" if x >= 70 else ("#3B82F6" if x >= 50 else "#BFDBFE")
     )
     fig_bar = go.Figure(go.Bar(
         x=rank_df["PCT"], y=rank_df["UNI"],
@@ -291,9 +291,9 @@ with col_l:
         cliponaxis=False,
     ))
     fig_bar.add_vline(
-        x=70, line_dash="dot", line_color="#10B981", line_width=1.5,
+        x=70, line_dash="dot", line_color="#1D4ED8", line_width=1.5,
         annotation_text="Meta 70%", annotation_position="top right",
-        annotation_font=dict(color="#10B981", size=10),
+        annotation_font=dict(color="#1D4ED8", size=10),
     )
     fig_bar.update_layout(
         height=262, margin=dict(l=0, r=55, t=6, b=6),
