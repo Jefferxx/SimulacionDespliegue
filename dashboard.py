@@ -135,9 +135,21 @@ div[data-testid="column"]:last-child button[kind="secondary"]:hover {
     font-weight: 700 !important;
     font-size: 11px !important;
     letter-spacing: 0.4px !important;
+    border-bottom: 2px solid #1740B0 !important;
+}
+[data-testid="stDataFrame"] tbody tr td {
+    border-bottom: 1px solid #DBEAFE !important;
+    color: #1E293B !important;
+}
+[data-testid="stDataFrame"] tbody tr:nth-child(odd) td {
+    background-color: #FFFFFF !important;
 }
 [data-testid="stDataFrame"] tbody tr:nth-child(even) td {
-    background-color: #F0F7FF !important;
+    background-color: #EFF6FF !important;
+}
+[data-testid="stDataFrame"] tbody tr:hover td {
+    background-color: #DBEAFE !important;
+    color: #1D4ED8 !important;
 }
 </style>
 """, unsafe_allow_html=True)
