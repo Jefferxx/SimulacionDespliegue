@@ -356,9 +356,11 @@ txt = np.where(np.isnan(z), "N/D", z.astype(str) + "%")
 fig_heat = go.Figure(go.Heatmap(
     z=z, x=heat_pivot.columns.tolist(), y=heat_pivot.index.tolist(),
     colorscale=[
-        [0.00, "#FEE2E2"], [0.30, "#FCA5A5"],
-        [0.50, "#FEF3C7"], [0.70, "#6EE7B7"],
-        [1.00, "#065F46"],
+        [0.00, "#EFF6FF"],
+        [0.25, "#BFDBFE"],
+        [0.50, "#60A5FA"],
+        [0.75, "#2563EB"],
+        [1.00, "#1E3A8A"],
     ],
     zmin=0, zmax=100,
     text=txt, texttemplate="<b>%{text}</b>", textfont=dict(size=10),
