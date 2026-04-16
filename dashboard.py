@@ -219,7 +219,7 @@ if st.session_state.show_filters:
         n_dim, n_uni, n_sub = len(sel_macro), len(sel_uni), len(sel_subdim)
         total_d, total_u, total_s = len(dim_macro_opts), len(uni_opts), len(subdim_opts)
         activo = not (n_dim == total_d and n_uni == total_u and n_sub == total_s)
-        badge_color = "#F59E0B" if activo else "#10B981"
+        badge_color = "#1D4ED8" if activo else "#64748B"
         badge_txt   = f"Filtro activo · {n_uni}/{total_u} uni · {n_sub}/{total_s} sub-dim" if activo else f"Sin filtros · {total_u} universidades · {total_s} sub-dimensiones"
         st.markdown(
             f'<div style="font-size:10px;font-weight:600;color:{badge_color};'
@@ -256,7 +256,7 @@ k1, k2, k3 = st.columns(3, gap="large")
 kpis = [
     (k1, f"{prom_global:.1f}%", "Resultado Global",       "promedio general de evaluación",          "#1D4ED8"),
     (k2, mejor_eis,             "Mayor Cumplimiento",      f"{mejor_val:.1f}% resultado promedio",    "#0EA5E9"),
-    (k3, peor_eis,              "Menor Cumplimiento",      f"{peor_val:.1f}% resultado promedio",     "#EF4444"),
+    (k3, peor_eis,              "Menor Cumplimiento",      f"{peor_val:.1f}% resultado promedio",     "#0369A1"),
 ]
 for col, val, label, sub, color in kpis:
     with col:
