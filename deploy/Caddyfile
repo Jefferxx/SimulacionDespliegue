@@ -1,0 +1,36 @@
+# ETalent Dashboard — Caddy Reverse Proxy (validación local ZAP en Windows)
+#
+# Caddy es un binario único, maneja WebSockets automáticamente y
+# es la forma más sencilla de probar las cabeceras de seguridad en Windows.
+#
+# Uso:
+#   1. Descargar caddy.exe desde https://caddyserver.com/download (Windows amd64)
+#   2. Colocar caddy.exe en esta carpeta (deploy/)
+#   3. Con Streamlit corriendo en :8501, ejecutar: caddy run
+#   4. Apuntar OWASP ZAP a http://localhost:8080
+#   5. Las cabeceras de seguridad aparecerán en todas las respuestas
+
+:8080 {
+    reverse_proxy localhost:8501
+
+    header {
+        # ZAP 10036: Suprimir versión del servidor
+        -Server
+        Server "ETalent-Dashboard"
+
+        # ZAP 10038: Content Security Policy
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.plot.ly; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' ws: wss:; frame-ancestors 'self';"
+
+        # ZAP 10021: X-Content-Type-Options
+        X-Content-Type-Options "nosniff"
+
+        # Buenas prácticas adicionales
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+
+        # ZAP 10096: Eliminar timestamps internos
+        -X-Runtime
+        -X-Timestamp
+        -X-Response-Time
+    }
+}
