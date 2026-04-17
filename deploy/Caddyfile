@@ -10,16 +10,20 @@
 #   4. Apuntar OWASP ZAP a http://localhost:8080
 #   5. Las cabeceras de seguridad aparecerán en todas las respuestas
 
-:8080 {
-    reverse_proxy localhost:8501
+:8082 {
+    # Eliminar el CSP propio de Streamlit/Tornado antes de inyectar el nuestro
+    # (sin esto Caddy duplica el header y ZAP lee el de Streamlit, que carece de frame-ancestors/form-action)
+    reverse_proxy localhost:8501 {
+        header_down -Content-Security-Policy
+    }
 
     header {
         # ZAP 10036: Suprimir versión del servidor
         -Server
         Server "ETalent-Dashboard"
 
-        # ZAP 10038: Content Security Policy
-        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.plot.ly; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' ws: wss:; frame-ancestors 'self';"
+        # ZAP 10038 + 10055: CSP completo — directivas sin fallback declaradas explícitamente
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.plot.ly; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none';"
 
         # ZAP 10021: X-Content-Type-Options
         X-Content-Type-Options "nosniff"
