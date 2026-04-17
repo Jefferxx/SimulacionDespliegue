@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<OWASPZAPReport programName="ZAP" version="2.16.1" generated="vie, 17 abr 2026 11:24:56">
+	
+		<site name="http://localhost:8082" host="localhost" port="8082" ssl="false">
+			<alerts>
+				
+					<alertitem>
+						<pluginid>10055</pluginid>
+						<alertRef>10055-10</alertRef>
+						<alert>CSP: script-src unsafe-eval</alert>
+						<name>CSP: script-src unsafe-eval</name>
+						<riskcode>2</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Medio (Alta)</riskdesc>
+						<confidencedesc>Alta</confidencedesc>
+						<desc>&lt;p&gt;Content Security Policy (CSP) es una capa de seguridad a&#xf1;adida que ayuda a detectar y mitigar ciertos tipos de ataques. Incluyendo (pero no limitado a) Cross Site Scripting (XSS), y ataques de inyecci&#xf3;n de datos. Estos ataques se utilizan, para todo, desde el robo de datos a la desfiguraci&#xf3;n de sitios o la distribuci&#xf3;n de malware. CSP proporciona un conjunto de cabeceras HTTP est&#xe1;ndar que permiten a los propietarios de sitios web declarar las fuentes de contenido aprobadas que los navegadores deber&#xed;an poder cargar en esa p&#xe1;gina. Los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im&#xe1;genes y objetos incrustables como applets Java, ActiveX y archivos de audio y v&#xed;deo.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>script-src incluye unsafe-eval.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/robots.txt</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>script-src incluye unsafe-eval.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/sitemap.xml</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>script-src incluye unsafe-eval.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>3</count>
+						<solution>&lt;p&gt;Aseg&#xfa;rese de que su servidor web, servidor de aplicaci&#xf3;n, balanceador de carga, etc. est&#xe1; configurado apropiadamente para establecer la cabecera de Pol&#xed;tica de Seguridad de Contenido.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;script-src incluye unsafe-eval.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.w3.org/TR/CSP/&lt;/p&gt;&lt;p&gt;https://caniuse.com/#search=content+security+policy&lt;/p&gt;&lt;p&gt;https://content-security-policy.com/&lt;/p&gt;&lt;p&gt;https://github.com/HtmlUnit/htmlunit-csp&lt;/p&gt;&lt;p&gt;https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>15</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10055</pluginid>
+						<alertRef>10055-5</alertRef>
+						<alert>CSP: script-src unsafe-inline</alert>
+						<name>CSP: script-src unsafe-inline</name>
+						<riskcode>2</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Medio (Alta)</riskdesc>
+						<confidencedesc>Alta</confidencedesc>
+						<desc>&lt;p&gt;Content Security Policy (CSP) es una capa de seguridad a&#xf1;adida que ayuda a detectar y mitigar ciertos tipos de ataques. Incluyendo (pero no limitado a) Cross Site Scripting (XSS), y ataques de inyecci&#xf3;n de datos. Estos ataques se utilizan, para todo, desde el robo de datos a la desfiguraci&#xf3;n de sitios o la distribuci&#xf3;n de malware. CSP proporciona un conjunto de cabeceras HTTP est&#xe1;ndar que permiten a los propietarios de sitios web declarar las fuentes de contenido aprobadas que los navegadores deber&#xed;an poder cargar en esa p&#xe1;gina. Los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im&#xe1;genes y objetos incrustables como applets Java, ActiveX y archivos de audio y v&#xed;deo.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>script-src incluye unsafe-inline.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/sitemap.xml</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>script-src incluye unsafe-inline.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>2</count>
+						<solution>&lt;p&gt;Aseg&#xfa;rese de que su servidor web, servidor de aplicaci&#xf3;n, balanceador de carga, etc. est&#xe1; configurado apropiadamente para establecer la cabecera de Pol&#xed;tica de Seguridad de Contenido.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;script-src incluye unsafe-inline.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.w3.org/TR/CSP/&lt;/p&gt;&lt;p&gt;https://caniuse.com/#search=content+security+policy&lt;/p&gt;&lt;p&gt;https://content-security-policy.com/&lt;/p&gt;&lt;p&gt;https://github.com/HtmlUnit/htmlunit-csp&lt;/p&gt;&lt;p&gt;https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>15</wascid>
+						<sourceid>8</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10055</pluginid>
+						<alertRef>10055-6</alertRef>
+						<alert>CSP: style-src unsafe-inline</alert>
+						<name>CSP: style-src unsafe-inline</name>
+						<riskcode>2</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Medio (Alta)</riskdesc>
+						<confidencedesc>Alta</confidencedesc>
+						<desc>&lt;p&gt;Content Security Policy (CSP) es una capa de seguridad a&#xf1;adida que ayuda a detectar y mitigar ciertos tipos de ataques. Incluyendo (pero no limitado a) Cross Site Scripting (XSS), y ataques de inyecci&#xf3;n de datos. Estos ataques se utilizan, para todo, desde el robo de datos a la desfiguraci&#xf3;n de sitios o la distribuci&#xf3;n de malware. CSP proporciona un conjunto de cabeceras HTTP est&#xe1;ndar que permiten a los propietarios de sitios web declarar las fuentes de contenido aprobadas que los navegadores deber&#xed;an poder cargar en esa p&#xe1;gina. Los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im&#xe1;genes y objetos incrustables como applets Java, ActiveX y archivos de audio y v&#xed;deo.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>style-src incluye unsafe-inline.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/robots.txt</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>style-src incluye unsafe-inline.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/sitemap.xml</uri>
+									<method>GET</method>
+									<param>Content-Security-Policy</param>
+									<attack></attack>
+									<evidence>default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; https://cdn.plot.ly; style-src &apos;self&apos; &apos;unsafe-inline&apos; https://fonts.googleapis.com; font-src &apos;self&apos; https://fonts.gstatic.com; img-src &apos;self&apos; data: blob:; connect-src &apos;self&apos;; frame-ancestors &apos;self&apos;; base-uri &apos;self&apos;; form-action &apos;self&apos;; object-src &apos;none&apos;;</evidence>
+									<otherinfo>style-src incluye unsafe-inline.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>3</count>
+						<solution>&lt;p&gt;Aseg&#xfa;rese de que su servidor web, servidor de aplicaci&#xf3;n, balanceador de carga, etc. est&#xe1; configurado apropiadamente para establecer la cabecera de Pol&#xed;tica de Seguridad de Contenido.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;style-src incluye unsafe-inline.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.w3.org/TR/CSP/&lt;/p&gt;&lt;p&gt;https://caniuse.com/#search=content+security+policy&lt;/p&gt;&lt;p&gt;https://content-security-policy.com/&lt;/p&gt;&lt;p&gt;https://github.com/HtmlUnit/htmlunit-csp&lt;/p&gt;&lt;p&gt;https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>15</wascid>
+						<sourceid>8</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10096</pluginid>
+						<alertRef>10096</alertRef>
+						<alert>Divulgaci&#xf3;n de Marcas de Tiempo - Unix</alert>
+						<name>Divulgaci&#xf3;n de Marcas de Tiempo - Unix</name>
+						<riskcode>1</riskcode>
+						<confidence>1</confidence>
+						<riskdesc>Bajo (Baja)</riskdesc>
+						<confidencedesc>Baja</confidencedesc>
+						<desc>&lt;p&gt;Una marca de tiempo fue revelada por la aplicaci&#xf3;n/servidor web. - Unix&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/emotion-styled.browser.esm.j1V2KkYw.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>1540483477</evidence>
+									<otherinfo>1540483477, que se eval&#xfa;a como: 2018-10-25 11:04:37.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/v4.Dwn3ecIa.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>2080374784</evidence>
+									<otherinfo>2080374784, que se eval&#xfa;a como: 2035-12-04 04:53:04.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>2</count>
+						<solution>&lt;p&gt;Confirmar que los datos encontrados de informaci&#xf3;n sobre la marca de tiempo no son sensibles, ni se pueden usar en patrones explotables de divulgaci&#xf3;n.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;1540483477, que se eval&#xfa;a como: 2018-10-25 11:04:37.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://cwe.mitre.org/data/definitions/200.html&lt;/p&gt;</reference>
+						<cweid>497</cweid>
+						<wascid>13</wascid>
+						<sourceid>30</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10109</pluginid>
+						<alertRef>10109</alertRef>
+						<alert>Aplicaci&#xf3;n Web Moderna</alert>
+						<name>Aplicaci&#xf3;n Web Moderna</name>
+						<riskcode>0</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Informativo (Media)</riskdesc>
+						<confidencedesc>Media</confidencedesc>
+						<desc>&lt;p&gt;La aplicaci&#xf3;n parece ser una aplicaci&#xf3;n web moderna. Si necesita explorarla autom&#xe1;ticamente, el Ajax Spider puede ser m&#xe1;s eficaz que el est&#xe1;ndar.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;script&gt;
+      window.prerenderReady = false
+    &lt;/script&gt;</evidence>
+									<otherinfo>No se han encontrado enlaces aunque s&#xed; scripts, lo que indica que se trata de una aplicaci&#xf3;n web moderna.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/robots.txt</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;script&gt;
+      window.prerenderReady = false
+    &lt;/script&gt;</evidence>
+									<otherinfo>No se han encontrado enlaces aunque s&#xed; scripts, lo que indica que se trata de una aplicaci&#xf3;n web moderna.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/sitemap.xml</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;script&gt;
+      window.prerenderReady = false
+    &lt;/script&gt;</evidence>
+									<otherinfo>No se han encontrado enlaces aunque s&#xed; scripts, lo que indica que se trata de una aplicaci&#xf3;n web moderna.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>3</count>
+						<solution>&lt;p&gt;Se trata de una alerta informativa, por lo que no es necesario realizar ning&#xfa;n cambio.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;No se han encontrado enlaces aunque s&#xed; scripts, lo que indica que se trata de una aplicaci&#xf3;n web moderna.&lt;/p&gt;</otherinfo>
+						<reference></reference>
+						<cweid>-1</cweid>
+						<wascid>-1</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10027</pluginid>
+						<alertRef>10027</alertRef>
+						<alert>Divulgaci&#xf3;n de informaci&#xf3;n - Comentarios sospechosos</alert>
+						<name>Divulgaci&#xf3;n de informaci&#xf3;n - Comentarios sospechosos</name>
+						<riskcode>0</riskcode>
+						<confidence>1</confidence>
+						<riskdesc>Informativo (Baja)</riskdesc>
+						<confidencedesc>Baja</confidencedesc>
+						<desc>&lt;p&gt;The response appears to contain suspicious comments which may help an attacker.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/index.k-9rUdPI.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>SELECT</evidence>
+									<otherinfo>The following pattern was used: \bSELECT\b and was detected in likely comment: &quot;//www.w3.org/2000/svg`},iconVerticalAlign:`middle`,iconViewBox:`0 0 24 24`},e,{ref:t}),U.createElement(`path`,{fill:`none`,d:`M0&quot;, see evidence field for the suspicious comment/snippet.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/isLength.Dot76Eow.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>select</evidence>
+									<otherinfo>The following pattern was used: \bSELECT\b and was detected in likely comment: &quot;//www.w3.org/2000/svg`;case`math`:return`http://www.w3.org/1998/Math/MathML`;default:return`http://www.w3.org/1999/xhtml`}}funct&quot;, see evidence field for the suspicious comment/snippet.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/src.BnXM6qiK.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>from</evidence>
+									<otherinfo>The following pattern was used: \bFROM\b and was detected in likely comment: &quot;//bit.ly/3cXEKWf`)}var Mo=Object,No=Mo.getPrototypeOf,Po=`constructor`,Fo=`prototype`,Io=`configurable`,Lo=`enumerable`,Ro=`writ&quot;, see evidence field for the suspicious comment/snippet.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8082/static/js/UriUtil.iHepHDsL.js</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>username</evidence>
+									<otherinfo>The following pattern was used: \bUSERNAME\b and was detected in likely comment: &quot;//example.com`);return n.hash=e,n.hash?n.hash.substring(1,n.hash.length):``}o(O,`canonicalizeHash`);function k(e,t){if(e=C(e,`?`&quot;, see evidence field for the suspicious comment/snippet.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>4</count>
+						<solution>&lt;p&gt;Eliminar todos los comentarios que muestren informaci&#xf3;n que pueda ayudar a un atacante y solucionar el problema al que se refieren.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;The following pattern was used: \bSELECT\b and was detected in likely comment: &quot;//www.w3.org/2000/svg`},iconVerticalAlign:`middle`,iconViewBox:`0 0 24 24`},e,{ref:t}),U.createElement(`path`,{fill:`none`,d:`M0&quot;, see evidence field for the suspicious comment/snippet.&lt;/p&gt;</otherinfo>
+						<reference></reference>
+						<cweid>615</cweid>
+						<wascid>13</wascid>
+						<sourceid>97</sourceid>
+					</alertitem>
+				
+			</alerts>
+		</site>
+	
+</OWASPZAPReport>
