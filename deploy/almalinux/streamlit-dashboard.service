@@ -1,0 +1,25 @@
+[Unit]
+Description=Streamlit Dashboard Service
+After=network.target
+
+[Service]
+Type=simple
+User=deployer
+Group=deployer
+WorkingDirectory=/var/www/html/dashboard
+Environment="HOME=/home/deployer"
+Environment="PATH=/var/www/html/dashboard/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/var/www/html/dashboard/venv/bin/streamlit run dashboard.py \
+    --server.port 8501 \
+    --server.address 127.0.0.1 \
+    --server.baseUrlPath /dashboard \
+    --server.headless true \
+    --server.enableCORS false \
+    --server.enableXsrfProtection false
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
