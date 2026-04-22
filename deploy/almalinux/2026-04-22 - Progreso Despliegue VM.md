@@ -19,8 +19,10 @@
 3. **Fase 1:** Actualización de sistema (`dnf update`) e instalación de herramientas base (`vim`, `wget`, `git`, `selinux utils`).
 4. **Fase 2:** Configuración de **SSH Key Authentication** exitosa (Windows -> VM sin contraseña).
 5. **Fase 3:** Instalación del **Stack LAMP** (Apache 2.4, MySQL 8.0, PHP 8.1) completada exitosamente.
-6. **Fase 4 (En curso):** Preparación de Moodle 4.x (Base de datos creada, archivos descargados y permisos configurados).
+6. **Fase 4:** Moodle LTS configurado exitosamente. Directorio `/moodle` accesible y Apache reiniciado sin errores de sintaxis.
 
-## 🛠️ Notas Técnicas
-- PHP 8.1 configurado con todas las extensiones requeridas por Moodle (intl, gd, xmlrpc, etc.).
-- `/var/moodledata` configurado con el contexto de SELinux `httpd_sys_rw_content_t`.
+## 🏁 Estado al cierre del 22 de abril
+- **Infraestructura:** VM con AlmaLinux 9.7 (NAT) operativa en `192.168.42.128`.
+- **Software:** Stack LAMP (Apache 2.4, MySQL 8.0, PHP 8.1) verificado.
+- **Acceso:** SSH Key configurada para `deployer`.
+- **Próximo Paso:** Finalizar instalación web de Moodle e iniciar el despliegue del Dashboard Streamlit.
