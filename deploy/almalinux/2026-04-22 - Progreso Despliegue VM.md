@@ -18,9 +18,8 @@
 2. **Fase 1:** Instalación exitosa de AlmaLinux 9.7 (Minimal) en VMware Workstation.
 3. **Fase 1:** Actualización de sistema (`dnf update`) e instalación de herramientas base (`vim`, `wget`, `git`, `selinux utils`).
 4. **Fase 2:** Configuración de **SSH Key Authentication** exitosa (Windows -> VM sin contraseña).
-5. **Fase 3:** Instalación de **Apache 2.4** y configuración del **Firewall** (Puertos 80/443 abiertos).
+5. **Fase 3:** Instalación de **Apache 2.4** y **MySQL 8.0** completada. Firewall configurado. PHP 8.1 en proceso.
 
 ## 🛠️ Notas Técnicas
-- Se cambió la red de **Bridged** a **NAT** para estabilizar la asignación de IP y asegurar salida a internet.
-- SSH configurado con el algoritmo `ed25519` por ser el más moderno y seguro.
-- SELinux está en modo **Enforcing** (se mantendrá así para simular producción).
+- MySQL 8.0 instalado como versión nativa de AlmaLinux 9.
+- Repositorio Remi añadido para soportar PHP 8.1 (requerido por Moodle 4.x).
