@@ -178,7 +178,8 @@ PCFG  = {"displayModeBar": False}
 # ──────────────────────────────────────────────────────────────────────────────
 # CARGA DE DATOS
 # ──────────────────────────────────────────────────────────────────────────────
-CSV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset_ettalent_clean.csv")
+CSV_PATH    = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset_ettalent_clean.csv")
+DETAIL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset_ettalent_detail.csv")
 
 @st.cache_data
 def load_data(path: str) -> pd.DataFrame:
@@ -187,7 +188,8 @@ def load_data(path: str) -> pd.DataFrame:
     df.dropna(subset=["IES ANONIMIZADA", "RESULTADO"], inplace=True)
     return df
 
-df_raw = load_data(CSV_PATH)
+df_raw        = load_data(CSV_PATH)    # 42 filas dimension-nivel (Hoja1) — KPIs, Ranking, Dim chart
+df_detail_raw = load_data(DETAIL_PATH) # ~518 filas indicador-nivel (Hoja3) — Radar, Heatmap, Tabla
 
 # ──────────────────────────────────────────────────────────────────────────────
 # FILTROS — panel inline, activado por el botón "Filtros" del header
@@ -198,12 +200,10 @@ if "show_filters" not in st.session_state:
 
 dim_macro_opts = sorted(df_raw["DIMENSION_MACRO"].unique())
 uni_opts       = sorted(df_raw["IES ANONIMIZADA"].unique())
-subdim_opts    = sorted(df_raw["SUBDIMENSIÓN"].unique())
 
 # Valores por defecto: todo seleccionado
-sel_macro  = dim_macro_opts
-sel_uni    = uni_opts
-sel_subdim = subdim_opts
+sel_macro = dim_macro_opts
+sel_uni   = uni_opts
 
 # ──────────────────────────────────────────────────────────────────────────────
 # HEADER  +  BOTÓN FILTROS
@@ -235,7 +235,7 @@ st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 if st.session_state.show_filters:
     with st.container():
         st.markdown('<div class="filter-panel">', unsafe_allow_html=True)
-        f1, f2, f3 = st.columns(3, gap="large")
+        f1, f2 = st.columns(2, gap="large")
         with f1:
             sel_macro = st.multiselect(
                 "Dimensión",
@@ -248,19 +248,13 @@ if st.session_state.show_filters:
                 uni_opts, default=uni_opts,
                 help="Universidades anonimizadas.",
             )
-        with f3:
-            sel_subdim = st.multiselect(
-                "Sub-Dimensión",
-                subdim_opts, default=subdim_opts,
-                help="Sub-dimensiones de la hoja activa.",
-            )
 
         # Estado del filtro
-        n_dim, n_uni, n_sub = len(sel_macro), len(sel_uni), len(sel_subdim)
-        total_d, total_u, total_s = len(dim_macro_opts), len(uni_opts), len(subdim_opts)
-        activo = not (n_dim == total_d and n_uni == total_u and n_sub == total_s)
+        n_dim, n_uni = len(sel_macro), len(sel_uni)
+        total_d, total_u = len(dim_macro_opts), len(uni_opts)
+        activo = not (n_dim == total_d and n_uni == total_u)
         badge_color = "#1D4ED8" if activo else "#64748B"
-        badge_txt   = f"Filtro activo · {n_uni}/{total_u} uni · {n_sub}/{total_s} sub-dim" if activo else f"Sin filtros · {total_u} universidades · {total_s} sub-dimensiones"
+        badge_txt   = f"Filtro activo · {n_uni}/{total_u} uni · {n_dim}/{total_d} dim" if activo else f"Sin filtros · {total_u} universidades · {total_d} dimensiones"
         st.markdown(
             f'<div style="font-size:10px;font-weight:600;color:{badge_color};'
             f'margin-top:4px;letter-spacing:0.5px;">{badge_txt}</div>',
@@ -268,15 +262,19 @@ if st.session_state.show_filters:
         )
         st.markdown('</div>', unsafe_allow_html=True)
 
-# Re-aplicar filtros (usa los valores del panel si está abierto, o los defaults si está cerrado)
+# Re-aplicar filtros
 df = df_raw[
     df_raw["DIMENSION_MACRO"].isin(sel_macro) &
-    df_raw["IES ANONIMIZADA"].isin(sel_uni) &
-    df_raw["SUBDIMENSIÓN"].isin(sel_subdim)
+    df_raw["IES ANONIMIZADA"].isin(sel_uni)
 ].copy()
 
-if df.empty:
-    st.warning("⚠️ No hay datos con los filtros seleccionados.")
+df_detail = df_detail_raw[
+    df_detail_raw["DIMENSION_MACRO"].isin(sel_macro) &
+    df_detail_raw["IES ANONIMIZADA"].isin(sel_uni)
+].copy()
+
+if df.empty or df_detail.empty:
+    st.warning("No hay datos con los filtros seleccionados.")
     st.stop()
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -352,7 +350,7 @@ with col_l:
 
 with col_r:
     st.markdown('<div class="sec-title">Perfil por Sub-Dimensión</div>', unsafe_allow_html=True)
-    radar_df = df.groupby("SUBDIMENSIÓN")["RESULTADO"].mean().reset_index()
+    radar_df = df_detail.groupby("SUBDIMENSIÓN")["RESULTADO"].mean().reset_index()
     cats = radar_df["SUBDIMENSIÓN"].tolist()
     vals = radar_df["RESULTADO"].tolist()
     fig_radar = go.Figure(go.Scatterpolar(
@@ -388,7 +386,7 @@ with col_r:
 st.markdown('<div class="sec-title">Mapa de Calor — Resultado por Universidad y Sub-Dimensión</div>',
             unsafe_allow_html=True)
 
-heat_pivot = df.pivot_table(
+heat_pivot = df_detail.pivot_table(
     index="IES ANONIMIZADA", columns="SUBDIMENSIÓN",
     values="RESULTADO", aggfunc="mean",
 )
@@ -492,11 +490,11 @@ with tc2:
     )
     macro_tabla = st.selectbox(
         "_macro",
-        ["Todas"] + sorted(df["DIMENSION_MACRO"].unique().tolist()),
+        ["Todas"] + sorted(df_detail["DIMENSION_MACRO"].unique().tolist()),
         index=0, label_visibility="collapsed",
     )
 
-tabla_df = df.copy()
+tabla_df = df_detail.copy()
 if macro_tabla != "Todas":
     tabla_df = tabla_df[tabla_df["DIMENSION_MACRO"] == macro_tabla]
 
@@ -534,21 +532,3 @@ st.dataframe(
         ),
     },
 )
-st.caption(
-    f"{len(tabla_display)} registros · "
-    f"Fuente: {', '.join(df['DIMENSION_MACRO'].unique())} · "
-    f"dataset_final.xlsx"
-)
-
-# ──────────────────────────────────────────────────────────────────────────────
-# FOOTER
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown("""
-<div style="
-    text-align:center; padding: 12px 0 2px 0; margin-top:10px;
-    border-top: 1px solid #E2E8F0;
-    color:#94A3B8; font-size:10.5px; font-family:Inter,sans-serif; font-weight:500;">
-    Dashboard ETalent &nbsp;·&nbsp; ESPOCH &nbsp;·&nbsp;
-    Prácticas Laborales &nbsp;·&nbsp; Jefferson Jordan &nbsp;·&nbsp; 2026
-</div>
-""", unsafe_allow_html=True)
