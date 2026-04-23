@@ -537,7 +537,7 @@ st.dataframe(
 st.caption(
     f"{len(tabla_display)} registros · "
     f"Fuente: {', '.join(df['DIMENSION_MACRO'].unique())} · "
-    f"datasetactualv2_2.xlsx"
+    f"dataset_final.xlsx"
 )
 
 # ──────────────────────────────────────────────────────────────────────────────
