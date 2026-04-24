@@ -169,6 +169,11 @@ UNI_COLORS = {
 }
 UNI_FALLBACK = "#6B7280"
 
+DIM_ORDER = [
+    "Transparencia", "Participación", "Información Académica",
+    "Comunicación", "Transf. Digital", "Investigación",
+]
+
 FONT  = dict(family="Inter, system-ui, sans-serif", size=11, color="#1E293B")
 BG    = dict(paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF")
 GRID  = "#F1F5F9"
@@ -200,10 +205,12 @@ if "show_filters" not in st.session_state:
 
 dim_macro_opts = sorted(df_raw["DIMENSION_MACRO"].unique())
 uni_opts       = sorted(df_raw["IES ANONIMIZADA"].unique())
+subdim_opts    = sorted(df_detail_raw["SUBDIMENSIÓN"].unique())
 
 # Valores por defecto: todo seleccionado
-sel_macro = dim_macro_opts
-sel_uni   = uni_opts
+sel_macro  = dim_macro_opts
+sel_uni    = uni_opts
+sel_subdim = subdim_opts
 
 # ──────────────────────────────────────────────────────────────────────────────
 # HEADER  +  BOTÓN FILTROS
@@ -235,7 +242,7 @@ st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 if st.session_state.show_filters:
     with st.container():
         st.markdown('<div class="filter-panel">', unsafe_allow_html=True)
-        f1, f2 = st.columns(2, gap="large")
+        f1, f2, f3 = st.columns(3, gap="large")
         with f1:
             sel_macro = st.multiselect(
                 "Dimensión",
@@ -248,13 +255,23 @@ if st.session_state.show_filters:
                 uni_opts, default=uni_opts,
                 help="Universidades anonimizadas.",
             )
+        with f3:
+            sel_subdim = st.multiselect(
+                "Sub-Dimensión",
+                subdim_opts, default=subdim_opts,
+                help="Sub-dimensiones de evaluación.",
+            )
 
         # Estado del filtro
-        n_dim, n_uni = len(sel_macro), len(sel_uni)
-        total_d, total_u = len(dim_macro_opts), len(uni_opts)
-        activo = not (n_dim == total_d and n_uni == total_u)
+        n_dim, n_uni, n_sub = len(sel_macro), len(sel_uni), len(sel_subdim)
+        total_d, total_u, total_s = len(dim_macro_opts), len(uni_opts), len(subdim_opts)
+        activo = not (n_dim == total_d and n_uni == total_u and n_sub == total_s)
         badge_color = "#1D4ED8" if activo else "#64748B"
-        badge_txt   = f"Filtro activo · {n_uni}/{total_u} uni · {n_dim}/{total_d} dim" if activo else f"Sin filtros · {total_u} universidades · {total_d} dimensiones"
+        badge_txt   = (
+            f"Filtro activo · {n_uni}/{total_u} uni · {n_dim}/{total_d} dim · {n_sub}/{total_s} subdim"
+            if activo else
+            f"Sin filtros · {total_u} universidades · {total_d} dimensiones"
+        )
         st.markdown(
             f'<div style="font-size:10px;font-weight:600;color:{badge_color};'
             f'margin-top:4px;letter-spacing:0.5px;">{badge_txt}</div>',
@@ -270,7 +287,8 @@ df = df_raw[
 
 df_detail = df_detail_raw[
     df_detail_raw["DIMENSION_MACRO"].isin(sel_macro) &
-    df_detail_raw["IES ANONIMIZADA"].isin(sel_uni)
+    df_detail_raw["IES ANONIMIZADA"].isin(sel_uni) &
+    df_detail_raw["SUBDIMENSIÓN"].isin(sel_subdim)
 ].copy()
 
 if df.empty or df_detail.empty:
@@ -456,7 +474,10 @@ fig_dim.update_layout(
     margin=dict(l=0, r=10, t=6, b=6),
     yaxis=dict(range=[0, 115], ticksuffix="%", gridcolor=GRID,
                zeroline=False, tickfont=dict(size=10, color="#94A3B8"), showline=False),
-    xaxis=dict(tickfont=dict(size=12, color="#1E293B"), showline=False, showgrid=False),
+    xaxis=dict(
+        categoryorder="array", categoryarray=DIM_ORDER,
+        tickfont=dict(size=12, color="#1E293B"), showline=False, showgrid=False,
+    ),
     legend=dict(
         orientation="h", yanchor="bottom", y=1.02,
         xanchor="right", x=1,
@@ -472,7 +493,7 @@ st.plotly_chart(fig_dim, use_container_width=True, config=PCFG)
 # ──────────────────────────────────────────────────────────────────────────────
 st.markdown('<div class="sec-title">Resultados por Indicador</div>', unsafe_allow_html=True)
 
-tc1, tc2 = st.columns([3, 1])
+tc1, tc2, tc3 = st.columns([2, 1, 2])
 with tc1:
     st.markdown(
         '<p style="color:#374151;font-weight:600;font-size:12px;margin-bottom:3px;">Ordenar por</p>',
@@ -480,7 +501,7 @@ with tc1:
     )
     orden = st.selectbox(
         "_orden",
-        ["Resultado (↓)", "Universidad", "Sub-Dimensión", "Indicador"],
+        ["Resultado (↓)", "Universidad", "Dimensión", "Variable"],
         index=0, label_visibility="collapsed",
     )
 with tc2:
@@ -498,21 +519,30 @@ tabla_df = df_detail.copy()
 if macro_tabla != "Todas":
     tabla_df = tabla_df[tabla_df["DIMENSION_MACRO"] == macro_tabla]
 
+with tc3:
+    st.markdown(
+        '<p style="color:#374151;font-weight:600;font-size:12px;margin-bottom:3px;">Variable</p>',
+        unsafe_allow_html=True,
+    )
+    variable_opts = ["Todas"] + sorted(tabla_df["VARIABLE"].unique().tolist())
+    var_tabla = st.selectbox("_var", variable_opts, index=0, label_visibility="collapsed")
+
+if var_tabla != "Todas":
+    tabla_df = tabla_df[tabla_df["VARIABLE"] == var_tabla]
+
 tabla_display = pd.DataFrame({
-    "Universidad":   tabla_df["IES ANONIMIZADA"],
-    "Dimensión":     tabla_df["DIMENSION_MACRO"],
-    "Sub-Dimensión": tabla_df["SUBDIMENSIÓN"],
-    "Variable":      tabla_df["VARIABLE"],
-    "Indicador":     tabla_df["INDICADOR"],
-    "Resultado":     tabla_df["RESULTADO"].round(1),
+    "Universidad": tabla_df["IES ANONIMIZADA"],
+    "Dimensión":   tabla_df["SUBDIMENSIÓN"].str.title(),
+    "Variable":    tabla_df["VARIABLE"],
+    "Resultado":   tabla_df["RESULTADO"].round(1),
 })
 
 if orden == "Universidad":
-    tabla_display = tabla_display.sort_values(["Universidad", "Sub-Dimensión", "Indicador"])
-elif orden == "Sub-Dimensión":
-    tabla_display = tabla_display.sort_values(["Sub-Dimensión", "Universidad"])
-elif orden == "Indicador":
-    tabla_display = tabla_display.sort_values(["Indicador", "Universidad"])
+    tabla_display = tabla_display.sort_values(["Universidad", "Dimensión", "Variable"])
+elif orden == "Dimensión":
+    tabla_display = tabla_display.sort_values(["Dimensión", "Universidad"])
+elif orden == "Variable":
+    tabla_display = tabla_display.sort_values(["Variable", "Universidad"])
 else:
     tabla_display = tabla_display.sort_values("Resultado", ascending=False)
 
@@ -522,12 +552,10 @@ st.dataframe(
     height=240,
     hide_index=True,
     column_config={
-        "Universidad":   st.column_config.TextColumn("Universidad",    width="medium"),
-        "Dimensión":     st.column_config.TextColumn("Dimensión",      width="small"),
-        "Sub-Dimensión": st.column_config.TextColumn("Sub-Dimensión",  width="medium"),
-        "Variable":      st.column_config.TextColumn("Variable",       width="large"),
-        "Indicador":     st.column_config.TextColumn("Indicador",      width="large"),
-        "Resultado":     st.column_config.ProgressColumn(
+        "Universidad": st.column_config.TextColumn("Universidad", width="medium"),
+        "Dimensión":   st.column_config.TextColumn("Dimensión",   width="large"),
+        "Variable":    st.column_config.TextColumn("Variable",    width="large"),
+        "Resultado":   st.column_config.ProgressColumn(
             "Resultado", format="%.1f%%", min_value=0, max_value=100, width="small"
         ),
     },
